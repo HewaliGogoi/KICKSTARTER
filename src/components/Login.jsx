@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { Container } from "./Style.module";
 
-const Body = styled.body`
+const Body = styled.div`
     background-color: whitesmoke;
 `
 const Login = () => {
@@ -53,7 +53,7 @@ const Login = () => {
           <label htmlFor="">Remember me</label>
           <br />
           or <br />
-          <button><i class="fa-brands fa-apple">Sign in with Apple</i></button>
+          <button><i className="fa-brands fa-apple">Sign in with Apple</i></button>
           <br />
           <input type="submit" value="Continue with Facebook" />
           <br />
