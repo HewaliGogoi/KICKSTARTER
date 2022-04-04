@@ -1,15 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {Kickstarter_logo} from './Kickstarter_logo';
+import Kickstarter from './Kickstarter.svg';
 
 const Logo = styled.div`
-  border : 2px solid #cecece;
+  // border : 2px solid #cecece;
+  listStyle:"none";
+  width:15vw;
   margin: auto;
+  margin-top:2vw;
+  
+  img{
+    width:100%;
+    height:30px;
+  }
+`;
+
+const SearchInput = styled.input`
+  width:${({open}) => open? "90vw" : "0vw"};
+  height: ${({open}) => open? "3.5rem" : "0vh"};
+  padding: ${({open}) => open? "1vw 5vw" : "10px"};
+  z-index: ${({open}) => open? "2" : "0"};
+  position: ${({open}) => open? "absolute" : ""};
+  top: ${({open}) => open? "0" : ""};
+  left: ${({open}) => open? "0" : ""};
+  border:none;
+  // border-bottom:${({open}) => open? "1px solid #cecece" : "none"};
+  outline:none;
+`;
+
+const SearchButton = styled.button`
+  border:none;
+  background-color:white;
 `;
 
 const Topic = styled.div`
-  border : 2px solid #cecece;
+  border : 1px solid #cecece;
   display : flex;
   justify-content : center;
   padding: 10px 0px;
@@ -20,9 +46,16 @@ const Topic = styled.div`
 `;
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setOpen(!open);
+  }
+
   return (
     <>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-white" style={{padding:"1rem 0px"}}>
         <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -36,15 +69,18 @@ const Navbar = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Start a project</Link>
                 </li>
             </ul>
-            <Logo>
-              {/* <Kickstarter_logo/> */}
-              <Link className="navbar-brand" to="/">KickStarter</Link>
-            </Logo>
+            <ul style={{width:"20vw", position: "absolute", left: "50%", transform: "translate(-50%)", listStyle: "none"}}>
+                <Logo>
+                  <img src={Kickstarter} alt="" />
+                </Logo>
+            </ul>
             <form className="d-flex">
                 {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
-                <button className="btn btn-outline-success" type="submit">Search</button>
+                <SearchButton onClick={handleSearch} style={!open ? {display:"block"}:{display : "none"}}>Search <i class="fa-solid fa-magnifying-glass"></i></SearchButton>
+                <SearchInput open={open} type="search" placeholder="Search for projects or categories"/>
+                <SearchButton onClick={handleSearch} style={open ? {display:"block"}:{display : "none"}}><i class="fa-solid fa-xmark"></i></SearchButton>
             </form>
-            <li className="nav-item">
+            <li className="nav-item" style={{listStyle: "none"}}>
             <Link className="nav-link" to="/">Log In</Link>
             </li>
             </div>
