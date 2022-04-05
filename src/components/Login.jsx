@@ -1,11 +1,25 @@
 import React from "react";
-import styled from 'styled-components'
+import styled from "styled-components";
+import {
+  Button,
+  Button1,
+  Button2,
+  GetNotified,
+  ReadMore,
+  Checkbox,
+  LoginText,
+  Forget_password,
+  NewTo,
+  SignUpText,
+  StyledInput,
+} from "./Style.module";
 
 import { Container } from "./Style.module";
 
 const Body = styled.div`
-    background-color: whitesmoke;
-`
+  background-color: whitesmoke;
+`;
+
 const Login = () => {
   const [formDetails, setFormDetails] = React.useState({
     email: "",
@@ -30,42 +44,50 @@ const Login = () => {
     <Body>
       <Container>
         <form onSubmit={handleSubmit}>
-          <h3>Log in</h3>
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={handleChange}
-          />
+          <LoginText>Log in</LoginText>
+          <StyledInput
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={handleChange}
+            />
           <br />
-          <input
-            type="text"
-            placeholder="password"
-            value={password}
-            onChange={handleChange}
-          />
+
+          <StyledInput
+              type="text"
+              placeholder="password"
+              value={password}
+              onChange={handleChange}
+            />
+          
           <br />
-          <a href="#"> Forgot your password?</a>
-          <br />
-          <br />
-          <button>Log in</button> <br />
-          <input type="checkbox" />
-          <label htmlFor="">Remember me</label>
-          <br />
+          <Forget_password>Forgot your password?</Forget_password>
+          <Button>Log in</Button> <br />
+          <Checkbox>
+            {" "}
+            <input type="checkbox" /> Remember me
+          </Checkbox>{" "}
           or <br />
-          <button><i className="fa-brands fa-apple">Sign in with Apple</i></button>
+          <Button1>
+            <i className="fa-brands fa-apple"> Sign in with Apple</i>
+          </Button1>
           <br />
-          <input type="submit" value="Continue with Facebook" />
+          <Button2>
+            <i class="fa-brands fa-facebook-square"></i> Continue with Facebook
+          </Button2>
           <br />
-          <label htmlFor="">
-            Get notified when your friends back and launch projects. We'll never
-            post anything on Facebook without your permission.
-          </label>
-          <a href="#"> Read more</a>
+          <GetNotified>
+            Get notified when your friends back and launch projects.
+            <br /> We'll never post anything on Facebook without your
+            permission.
+          </GetNotified>
+          <ReadMore> Read more </ReadMore>
           <hr />
-          <label htmlFor="">New to Kickstarter?</label> <a href="#"> Sign up</a>
+          <NewTo>
+            New to Kickstarter? <SignUpText> Sign up</SignUpText>
+          </NewTo>
           <hr />
-          <p>
+          <GetNotified>
             This site is protected by reCAPTCHA and the Google
             <a href="#">
               {" "}
@@ -74,7 +96,7 @@ const Login = () => {
             </a>{" "}
             and
             <a href="#"> Terms of service</a> apply.
-          </p>
+          </GetNotified>
         </form>
       </Container>
     </Body>
