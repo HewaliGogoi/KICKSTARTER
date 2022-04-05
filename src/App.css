@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.fill-ksr10-green{
+  color:green;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
