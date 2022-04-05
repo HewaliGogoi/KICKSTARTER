@@ -58,6 +58,7 @@ const Login = () => {
               value={email}
               name = "email"
               onChange={handleChange}
+              required
             />
           <br />
 
@@ -67,6 +68,7 @@ const Login = () => {
               value={password}
               name = "password"
               onChange={handleChange}
+              required
             />
           
           <br />

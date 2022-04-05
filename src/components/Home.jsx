@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
+import { useNavigate } from 'react-router-dom';
 
 const QuoteWrapper = styled.div`
   padding:1.5rem;
@@ -41,15 +42,24 @@ const Overview = styled.div`
 const FeaturedWrapper = styled.div`
   border-right: 1px solid #cecece;  
   justify-content:left;
+  align-items:left; 
+  // margin-left:-10%;
   width: 50%;
+  padding-right: 4%;
+  cursor:pointer;
 
   img{
-    width: 90%;
+    width: 100%;
   }
 `;
 
 const RecommendWrapper = styled.div`
-
+  width:50%;
+  padding-left: 4%;
+  img{
+    width:30%;
+    margin:10px;
+  }
 `;
 
 const Raiser = styled.div`
@@ -58,12 +68,23 @@ const Raiser = styled.div`
 `;
 
 const Home = () => {
-  const [img, setImg] = useState([]);
+  const [imgData, setImgData] = useState([]);
+  const navigate = useNavigate();
 
-  const handleImage = () => {
+  useEffect(() => {
+   getData();
+  }, []);
+  
+  const getData = () => {
     fetch(`http://localhost:3001/project`)
     .then((data) => data.json())
-    .then((data) => console.log(data))
+    // .then((data) => console.log(data))
+    .then((data) => {setImgData([...data])})
+    console.log(imgData)
+  }
+
+  const handleImage = () => {
+    navigate("/projects")
   }
 
   return (
@@ -99,6 +120,16 @@ const Home = () => {
           </FeaturedWrapper>
           <RecommendWrapper>
             <p>RECOMMENDED FOR YOU</p>
+            {
+              imgData.map((e) => <div key={e.id}>
+                <div style={{display:"flex"}}>
+                  <img src={e.image} alt="" />
+                  <div>
+                    <p>{e.title}</p>
+                  </div>
+                </div>
+              </div>)
+            }
           </RecommendWrapper>
         </Overview>
       </BodyWrapper>
