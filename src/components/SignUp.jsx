@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { P,Button, Button1, Button2, Container, Checkbox1, Checkbox2, GetNotified, ReadMore, LoginText,StyledInput} from './Style.module'
 import styled from 'styled-components'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Body = styled.div`
   background-color: whitesmoke;
@@ -16,6 +16,8 @@ const SignUp = () => {
   });
 
   const [list, setList] = useState([])
+
+  const navigate = useNavigate();
 
   const [show, setShow] = useState(false)
   const handleShowEmail = () =>{
@@ -55,7 +57,7 @@ const SignUp = () => {
     .then((data)=> {setList([...data])
       console.log(list)
     }) 
-    
+    navigate('/login');
   }
 
   const {name,email,password} = userSignUp;
@@ -66,7 +68,7 @@ const SignUp = () => {
     <Container>
      <form onSubmit={handleSubmit} >
         <div>
-           <>Have an account? <P>Log in</P></>
+           <>Have an account? <P to = "/login">Log in</P></>
            <hr />
            <LoginText>Sign up</LoginText>
 

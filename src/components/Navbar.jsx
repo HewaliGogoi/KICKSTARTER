@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
 import Kickstarter from './Kickstarter.svg';
 
@@ -13,6 +13,7 @@ const Logo = styled.div`
   img{
     width:100%;
     height:30px;
+    cursor:pointer;
   }
 `;
 
@@ -47,10 +48,15 @@ const Topic = styled.div`
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
     setOpen(!open);
+  }
+
+  const handleHome = () => {
+    navigate("/")
   }
 
   return (
@@ -71,7 +77,7 @@ const Navbar = () => {
             </ul>
             <ul style={{width:"20vw", position: "absolute", left: "50%", transform: "translate(-50%)", listStyle: "none"}}>
                 <Logo>
-                  <img src={Kickstarter} alt="" />
+                  <img onClick={handleHome} src={Kickstarter} alt="" />
                 </Logo>
             </ul>
             <form className="d-flex">
@@ -81,7 +87,7 @@ const Navbar = () => {
                 <SearchButton onClick={handleSearch} style={open ? {display:"block"}:{display : "none"}}><i className="fa-solid fa-xmark"></i></SearchButton>
             </form>
             <li className="nav-item" style={{listStyle: "none"}}>
-            <Link className="nav-link" to="/">Log In</Link>
+            <Link className="nav-link" to="/login">Log In</Link>
             </li>
             </div>
         </div>

@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
     width:28%;
@@ -78,13 +79,14 @@ export const NewTo = styled.p`
     color: black;
     font-size: medium;
 `
-export const SignUpText = styled.p`
+export const SignUpText = styled(Link)`
      color: #156288;
      cursor: pointer;
-     display: inline-block
+     display: inline-block;
+     text-decoration : none;
 `
 
-export const P = styled.p`
+export const P = styled(Link)`
      color: #1a38e0;
      cursor: pointer;
      display: inline-block;
