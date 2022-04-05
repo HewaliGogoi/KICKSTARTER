@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 
 const QuoteWrapper = styled.div`
   padding:1.5rem;

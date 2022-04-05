@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 
 export const Container = styled.div`
     width:28%;
-    /* height: 600px; */
     background-color: white;
     gap: 30px;
     border: 1px solid #f7e9e9;
