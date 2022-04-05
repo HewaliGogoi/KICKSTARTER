@@ -76,9 +76,9 @@ const Navbar = () => {
             </ul>
             <form className="d-flex">
                 {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
-                <SearchButton onClick={handleSearch} style={!open ? {display:"block"}:{display : "none"}}>Search <i class="fa-solid fa-magnifying-glass"></i></SearchButton>
+                <SearchButton onClick={handleSearch} style={!open ? {display:"block"}:{display : "none"}}>Search <i className="fa-solid fa-magnifying-glass"></i></SearchButton>
                 <SearchInput open={open} type="search" placeholder="Search for projects or categories"/>
-                <SearchButton onClick={handleSearch} style={open ? {display:"block"}:{display : "none"}}><i class="fa-solid fa-xmark"></i></SearchButton>
+                <SearchButton onClick={handleSearch} style={open ? {display:"block"}:{display : "none"}}><i className="fa-solid fa-xmark"></i></SearchButton>
             </form>
             <li className="nav-item" style={{listStyle: "none"}}>
             <Link className="nav-link" to="/">Log In</Link>
