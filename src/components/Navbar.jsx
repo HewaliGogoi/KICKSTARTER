@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {Kickstarter_logo} from './Kickstarter_logo';
 
 const Logo = styled.div`
   border : 2px solid #cecece;
@@ -21,7 +20,7 @@ const Topic = styled.div`
 
 const Navbar = () => {
   return (
-    <>
+    <> 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,9 +32,10 @@ const Navbar = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Discover</Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Start a project</Link>
+                <Link className="nav-link active" aria-current="page" to="/startProject"> Start Project </Link>
                 </li>
             </ul>
+            
             <Logo>
               {/* <Kickstarter_logo/> */}
               <Link className="navbar-brand" to="/">KickStarter</Link>
@@ -45,7 +45,7 @@ const Navbar = () => {
                 <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
             <li className="nav-item">
-            <Link className="nav-link" to="/">Log In</Link>
+            <Link className="nav-link" to="/Login">Log In</Link>
             </li>
             </div>
         </div>

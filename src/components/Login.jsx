@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 
 import { Container } from "./Style.module";
 
@@ -63,7 +64,7 @@ const Login = () => {
           </label>
           <a href="#"> Read more</a>
           <hr />
-          <label htmlFor="">New to Kickstarter?</label> <a href="#"> Sign up</a>
+          <label htmlFor="">New to Kickstarter?</label> <Link className="nav-link" to="/SignUp">Sign Up</Link>
           <hr />
           <p>
             This site is protected by reCAPTCHA and the Google

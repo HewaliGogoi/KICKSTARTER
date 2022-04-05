@@ -1,9 +1,10 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Switch} from "react-router-dom";
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import { StartProject } from './components/startProject';
 
 
 function App() {
@@ -12,8 +13,9 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path = "/" element = {<Home />}/>
-        <Route path = "/" element = {<SignUp />}/>
-        <Route path = "/" element = {<Login />}/>
+        <Route path = "/SignUp" element = {<SignUp />}/>
+        <Route path = "/Login" element = {<Login />}/>
+        <Route path = "/StartProject" element = {<StartProject />}/>
       </Routes>
     </div>
   );
