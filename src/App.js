@@ -9,12 +9,14 @@ import Login from './components/Login';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Routes>
+      <Navbar/> 
+      {/* <Login/> */}
+     <SignUp/>
+       {/* <Routes>
         <Route path = "/" element = {<Home />}/>
         <Route path = "/" element = {<SignUp />}/>
         <Route path = "/" element = {<Login />}/>
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
