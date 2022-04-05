@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
   Button,
@@ -23,8 +24,10 @@ const Body = styled.div`
 const Login = () => {
   const [formDetails, setFormDetails] = React.useState({
     email: "",
-    password: "",
+    password: ""
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,6 +42,10 @@ const Login = () => {
     e.prevenDefault();
   };
 
+  const handleHome = () => {
+    navigate("/")
+  }
+
   const { email, password } = formDetails;
   return (
     <Body>
@@ -49,6 +56,7 @@ const Login = () => {
               type="text"
               placeholder="Email"
               value={email}
+              name = "email"
               onChange={handleChange}
             />
           <br />
@@ -57,12 +65,13 @@ const Login = () => {
               type="text"
               placeholder="password"
               value={password}
+              name = "password"
               onChange={handleChange}
             />
           
           <br />
           <Forget_password>Forgot your password?</Forget_password>
-          <Button>Log in</Button> <br />
+          <Button onClick = {handleHome}>Log in</Button> <br />
           <Checkbox>
             {" "}
             <input type="checkbox" /> Remember me
@@ -73,7 +82,7 @@ const Login = () => {
           </Button1>
           <br />
           <Button2>
-            <i class="fa-brands fa-facebook-square"></i> Continue with Facebook
+            <i className="fa-brands fa-facebook-square"></i> Continue with Facebook
           </Button2>
           <br />
           <GetNotified>
@@ -84,7 +93,7 @@ const Login = () => {
           <ReadMore> Read more </ReadMore>
           <hr />
           <NewTo>
-            New to Kickstarter? <SignUpText> Sign up</SignUpText>
+            New to Kickstarter? <SignUpText to = "/signup"> Sign up</SignUpText>
           </NewTo>
           <hr />
           <GetNotified>
