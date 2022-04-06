@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Body = styled.div`
   background-color: whitesmoke;
-  border: 1px solid red;
 `;
 
 const SignUp = () => {

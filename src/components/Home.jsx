@@ -9,6 +9,7 @@ const HomeWrapper = styled.div`
   // padding: 0px 5%;
     
 `;
+// import ReactPlayer from 'react-player';
 
 const QuoteWrapper = styled.div`
   padding:1.5rem;
