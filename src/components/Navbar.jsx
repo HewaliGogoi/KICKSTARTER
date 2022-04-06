@@ -5,7 +5,7 @@ import Kickstarter from './Kickstarter.svg';
 
 const Logo = styled.div`
   // border : 2px solid #cecece;
-  listStyle:"none";
+  /* listStyle:"none"; */
   width:15vw;
   margin: auto;
   margin-top:2vw;

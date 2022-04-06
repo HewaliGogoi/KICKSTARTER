@@ -104,8 +104,60 @@ export const StyledInput = styled.input`
     width: 78%;
     padding: 8px;
     margin: 5px;
-    border:1px solid lightgray
-    /* & :input:focus{
-        color: #028858;
-    } */
+    border:1px solid lightgray;
  `
+ export const Footer_headings = styled.div`
+  border : 1px solid #cecece;
+  display : flex;
+  justify-content : center;
+  padding: 10px 0px;
+
+  a{
+    color :black;
+  }
+`
+export const Footer_text_section = styled.div`
+    display: flex;
+    margin: 30px;
+    column-gap: 13%;
+    margin-left:22%;
+    text-align: left;
+    h6{
+        margin-left: 16%;
+    }
+`
+export const Copyright = styled.span`
+    float: left;
+    margin-left: 8%;
+`
+
+export const Social_media = styled.div`
+    float: middle;
+    margin-right: 5%;
+    i{
+        margin-left: 20px;
+    }
+    
+`
+export const Settings_section = styled.div`
+    float: right;
+    display: flex;
+    gap: 10px;
+    margin-right:18%;
+    margin-top:-1.5%;
+    border: transparent;
+    cursor: pointer;
+`
+export const Footer_bottom = styled.div`
+  border : 1px solid #cecece;
+  display : flex;
+  justify-content : center;
+  padding: 10px 0px;
+  width: 100%;
+  margin-top: 10px;
+
+  a{
+    color :black;
+    font-size: small;
+  }
+`
