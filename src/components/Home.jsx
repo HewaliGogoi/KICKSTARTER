@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Responsive from './Responsive';
+import right from './right.jpeg';
+import left from './left.jpeg';
 
 const HomeWrapper = styled.div`
   // border: 1px solid green;
@@ -53,7 +55,8 @@ const Overview = styled.div`
   const FeaturedWrapper = styled.div`
   border-right: 1px solid #cecece;  
   justify-content:left;
-  align-items:left;                   
+  align-items:left;    
+  text-align:left;               
   // margin-left:-10%;
   width: 50%;
   padding: 2% 0px;
@@ -69,6 +72,8 @@ const RecommendWrapper = styled.div`
   width:50%;
   padding: 2% 0px;
   padding-left: 4%;
+  text-align:left;               
+
   img{
     width:30%;
     margin:10px;
@@ -139,7 +144,7 @@ const Home = () => {
   return (
     <HomeWrapper>
       <div>
-        <img src={"./public/right.jpeg"} alt="" />
+        <img src={right} alt="" />
         <QuoteWrapper>
           <h1>Creative work shows us what’s possible.</h1>
           <h1>Help fund it here.</h1>
@@ -161,6 +166,7 @@ const Home = () => {
             </div>
           </Track>
         </div>
+        <img src={left} alt="" />
       </div>
       <BodyWrapper>
         <Overview>

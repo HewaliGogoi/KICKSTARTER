@@ -23,7 +23,14 @@ export default class Responsive extends Component {
 
     return (
       <div style={{position:"relative"}}>
-        <button style={{position:"absolute", left:0}}><i className="fa-solid fa-chevron-left"></i></button>
+          <div>
+              <h6>FRESH FAVORITES</h6>
+              <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
+              <div>
+                <button ><i className="fa-solid fa-chevron-left"></i></button>
+                <button ><i className="fa-solid fa-chevron-right"></i></button>
+              </div>
+          </div>
         <Slider {...settings}>
           <div>
             <h3>1</h3>
@@ -44,7 +51,6 @@ export default class Responsive extends Component {
             <h3>6</h3>
           </div>
         </Slider>
-        <button style={{position:"absolute", right:0, top:"50%"}}><i className="fa-solid fa-chevron-right"></i></button>
       </div>
     );
   }
