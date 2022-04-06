@@ -1,11 +1,13 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, Switch} from "react-router-dom";
 import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
+import { StartProject } from './components/startProject';
 import Project from './components/Project';
 import Footer from './components/Footer';
+
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
      {/* <Home/> */}
        <Routes>
         <Route path = "/" element = {<Home />}/>
+
+        <Route path = "/StartProject" element = {<StartProject />}/>
         <Route path = "/signup" element = {<SignUp />}/>
         <Route path = "/login" element = {<Login />}/>
         <Route path = "/projects" element = {<Project />}/>
