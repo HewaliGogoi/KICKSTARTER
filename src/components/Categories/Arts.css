@@ -1,0 +1,37 @@
+.FAQ1{
+    display: grid;
+    padding: 50px 11.0rem; 
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+}
+
+
+.ans1{
+    padding: 0 2.8rem;
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+.ans2{
+    border: 1px solid black;
+    text-align: left;
+    padding: 25px 40px;
+    margin-left: 10px;
+}
+
+.ans2 h5{
+    font-weight: bold;
+}
+
+
+.start{
+    font-size: 20px;
+}
+
+.rights{
+    font-size: 15px;
+}
+
+.container img{
+    width: 250px;
+}

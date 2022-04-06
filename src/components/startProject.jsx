@@ -1,4 +1,6 @@
 import React from "react";
+import { Categories } from "./Categories";
+import { Arts } from "./Categories/Arts";
 import "./Style/startProject.css";
 
 function StartProject() {
@@ -116,7 +118,8 @@ function StartProject() {
           projects.
         </div>
 
-        <div className="Question">All-or-nothing funding works.</div>
+        <div className="Question">
+        All-or-nothing funding works.</div>
         <div className="ans">
           Kickstarter’s all-or-nothing model allows you to choose a funding goal
           and a set number of days to reach that goal. This way, you don’t get
@@ -124,7 +127,8 @@ function StartProject() {
           backers incentive to pledge more to help you reach your goal.
         </div>
 
-        <div className="Question">Our community wants to support you.</div>
+        <div className="Question">
+        Our community wants to support you.</div>
         <div className="ans">
           Millions of backers agree — helping to create something new is
           exciting. People love peeking behind the creative curtain and directly
@@ -138,7 +142,22 @@ function StartProject() {
       <div className="section2">
         <div className="desc">Create a project in any of the following categories</div>
       </div>
+      
+      <div className="navbar-cat">
+      <Categories />
+      </div>
+      
+      <Arts/ >
 
+      <div className="container-fluid destiny">
+        <div className="row">
+        <div className="lg bottom-destiny">
+        “A way for every creative person to control their destiny.”
+        </div>
+        <div className="lg author-destiny">— Brian Fargo, successful Kickstarter project creator</div>
+        </div>
+        <button className="sbutton btn btn-secondary btn-lg">Start a project</button>
+      </div> 
     </>
   );
 }

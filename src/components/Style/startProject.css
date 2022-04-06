@@ -145,5 +145,32 @@ body *{
 
 hr{
     background-color: black;
-    margin: 100px 0;
+    margin-top: 100px;
+}
+
+.navbar-cat{
+    padding: 0 200px;
+}
+
+.destiny{
+    background-color: #FFCBA9;
+    padding: 50px 250px;
+    font-weight: bold;
+    position: relative;
+}
+
+.bottom-destiny{
+    font-size: 3rem;
+    padding: 3rem 4rem;
+    text-align: left;
+}
+
+.author-destiny{
+    text-align: left;
+    padding: 0.1rem 4rem;
+}
+
+.sbutton{
+    position: absolute;
+    
 }
