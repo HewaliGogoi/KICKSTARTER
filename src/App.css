@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  font-family: 'Patrick Hand', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Serif 4', serif;
 }
 
 .App-logo {
