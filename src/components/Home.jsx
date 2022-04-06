@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
+import Responsive from './Responsive';
 
 const HomeWrapper = styled.div`
   // border: 1px solid green;
@@ -21,10 +22,12 @@ const BodyWrapper = styled.div`
 
 const Track = styled.div`
   // border: 1px solid grey;
-  justify-content: space-around;
+  justify-content: center;
   align-items:center;
   display:flex;
   box-shadow: 0px 1px 5px 0px #cecece;
+  width:80%;
+  margin:auto;
   
   div{
     border: 1px solid #cecece;
@@ -43,14 +46,16 @@ const Track = styled.div`
 const Overview = styled.div`
   // border: 1px solid brown;  
   display:flex;
+  padding: 3% 0px;
 `;
-
-const FeaturedWrapper = styled.div`
+  
+  const FeaturedWrapper = styled.div`
   border-right: 1px solid #cecece;  
   justify-content:left;
   align-items:left;                   
   // margin-left:-10%;
   width: 50%;
+  padding: 2% 0px;
   padding-right: 4%;
   cursor:pointer;
 
@@ -61,6 +66,7 @@ const FeaturedWrapper = styled.div`
 
 const RecommendWrapper = styled.div`
   width:50%;
+  padding: 2% 0px;
   padding-left: 4%;
   img{
     width:30%;
@@ -91,61 +97,71 @@ const Favourites = styled.div`
   padding:5% 10%;
 `;
 
+const Interview = styled.div`
+  border: 1px solid red;
+`;
+
 const Home = () => {
   const [imgData, setImgData] = useState([]);
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
+  const [interview, setInterview] = useState(1);
 
   useEffect(() => {
    getData();
   }, [page]);
+
+  // useEffect(() => {
+  //   getDataInterview();
+  //  }, []);
   
   const getData = () => {
-    fetch(`http://localhost:3001/project?_page${page}&_limit=3`)
+    fetch(`http://localhost:3001/project?_page=${page}&_limit=3`)
     .then((data) => data.json())
     // .then((data) => console.log(data))
-    .then((data) => {setImgData([...data])})
-    console.log(imgData)
+    .then((data) => {setImgData([...data]);
+      console.log(data)})
+    
   }
+
+  // const getDataInterview = () => {
+  //   fetch(`http://localhost:3001/interview`)
+  //   .then((data) => data.json())
+  //   .then((data) => console.log(data))
+  //   .then((data) => {setInterview([...data])})
+  // }
 
   const handleImage = () => {
     navigate("/projects")
   }
 
-  const handlep1 = () => {
-    setPage(1);
-  }
-
-  const handlep2 = () => {
-    setPage(2);
-  }
-  
-  const handlep3 = () => {
-    setPage(3);
-  }
-
   return (
     <HomeWrapper>
-      <QuoteWrapper>
-        <h1>Creative work shows us what’s possible.</h1>
-        <h1>Help fund it here.</h1>
-      </QuoteWrapper>
+      <div>
+        <img src={"./public/right.jpeg"} alt="" />
+        <QuoteWrapper>
+          <h1>Creative work shows us what’s possible.</h1>
+          <h1>Help fund it here.</h1>
+        </QuoteWrapper>
+        <div>
+          <p style={{color:"grey"}}>WITHIN THE LAST DAY</p>
+          <Track>
+            <div>
+                <h1>54</h1>
+                <p>projects funded</p>
+            </div>
+            <div>
+                <h1>$1,629,435</h1>
+                <p>towards creative work</p>
+            </div>
+            <div>
+                <h1>15,035</h1>
+                <p>backings</p>
+            </div>
+          </Track>
+        </div>
+      </div>
       <BodyWrapper>
-        <p style={{color:"grey"}}>WITHIN THE LAST DAY</p>
-        <Track>
-          <div>
-              <h1>54</h1>
-              <p>projects funded</p>
-          </div>
-          <div>
-              <h1>$1,629,435</h1>
-              <p>towards creative work</p>
-          </div>
-          <div>
-              <h1>15,035</h1>
-              <p>backings</p>
-          </div>
-        </Track>
         <Overview>
           <FeaturedWrapper>
             <p>FEATURED PROJECT</p>
@@ -159,7 +175,7 @@ const Home = () => {
             <p>RECOMMENDED FOR YOU</p>
             {
               imgData.map((e) => <div key={e.id}>
-                <div style={{display:"flex"}}>
+                <div style={{display:"flex", borderBottom:"1px solid #cecece"}}>
                   <img src={e.image} alt="" />
                   <div>
                     <h6>{e.title}</h6>
@@ -169,9 +185,15 @@ const Home = () => {
               </div>)
             }
             <div style = {{display : "flex"}}>
-              <p onClick = {handlep1}>1</p>
-              <p onClick = {handlep2}>2</p>
-              <p onClick = {handlep3}>3</p>
+              <button disabled={page==1} onClick={()=>setPage(page-1)} style = {{borderRadius:"50%", width:"6%", height:"30px"}}>
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+              <p onClick={()=>setPage((prev)=>prev = 1)}>1</p>
+              <p onClick={()=>setPage((prev)=>prev = 2)}>2</p>
+              <p onClick={()=>setPage((prev)=>prev = 3)}>3</p>
+              <button disabled={page==3} onClick={()=>setPage(page+1)} style = {{borderRadius:"50%", width:"6%", height:"30px"}}>
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
             </div>
           </RecommendWrapper>
         </Overview>
@@ -187,37 +209,30 @@ const Home = () => {
             </div>
         </Announcement>
         <Favourites>
-          <p>FRESH FAVORITES <a href="">Discover more</a></p>
-          <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-            <div className="carousel-inner">
-              <div className="carousel-item active" style={{display:"flex"}}>
-                {
-                  imgData.map((e) => <div style = {{width:"70%", margin:"1%"}} key={e.id}>
-                      <img style = {{width:"100%"}} src={e.image} alt="" />
-                      <h5>{e.title}</h5>
-                      <h6>{e.subtitle}</h6>
-                      <p>By {e.author}</p>
-                  </div>)
-                }
-              </div>
-              <div className="carousel-item">
-                <img src="..." className="d-block w-100" alt="..."/>
-              </div>
-              <div className="carousel-item">
-                <img src="..." className="d-block w-100" alt="..."/>
-              </div>
-            </div>
-            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
+          <Responsive/>
         </Favourites>
-
+        <Announcement>
+            <img src="https://berkeleybeacon.com/wp-content/uploads/2022/03/Screen-Shot-2022-03-01-at-1.06.08-PM.png" alt="" />
+            <div>
+              <div style={{borderLeft: "7px solid #037362", marginLeft:"5%"}}>
+                <h3>Long Story Short</h3>
+                <h5>Throughout March, we're featuring campaigns by brilliant, subversive, playful, and creatively ambitious filmmakers—and we want you to join us. To take part, back a short film to help bring it to life.</h5>
+              </div>
+              <a href="">Find out more</a>
+            </div>
+        </Announcement>
+        <Interview>
+          {/* {
+            interview.map((e) => <div key={e.id}>
+              <div style={{display:"flex"}}>
+                <img src={e.image} alt="" />
+                <div>
+                  <h6>{e.about}</h6>
+                </div>
+              </div>
+            </div>)
+          } */}
+        </Interview>
     </HomeWrapper>
   )
 }

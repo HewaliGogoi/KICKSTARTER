@@ -60,7 +60,7 @@
     },
     {
       "id": 4,
-      "image": "https://ksr-ugc.imgix.net/assets/036/897/332/87dae911a3770e357d1d8922f94be7e7_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1649212319&auto=format&frame=1&q=92&s=6140bba8a96e65e43dfddc78e687b603",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZxZx0chb8S4EjtP_rs1xu6YBpOLSEw-CyVg&usqp=CAU",
       "vedio": "https://www.youtube.com/watch?v=bAiszsyiqaw",
       "title": "The Farm Family Project",
       "subtitle" : "A Fine Art Photobook by Rob MacInnis Featuring 15 Years of Farm Animal Portraits",
@@ -87,12 +87,53 @@
     },
     {
       "id": 7,
-      "image": "https://ksr-ugc.imgix.net/assets/036/890/877/fe744f371baba3ecdab547f7d25f194b_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1649171013&auto=format&frame=1&q=92&s=6d58e6f4a1f0a1aebbb57ef742776291",
-      "vedio": "https://www.youtube.com/watch?v=RAHbiLW8XuY",
-      "title": "Style Shells 2.0 The Ultimate summer companion",
-      "subtitle" : "Very stylish light weight waterproof shells made with cotton that fold up into a small carry bag for men and women",
-      "author" : "Sweet Clothing Distribution",
+      "image": "https://ksr-ugc.imgix.net/assets/036/789/174/ff3e3336efe70e51310542e81f87c434_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1648347389&auto=format&frame=1&q=92&s=45b11f99e5a3319956cb81343be2fc07",
+      "vedio": "https://www.youtube.com/watch?v=WGgwI0II9bM",
+      "title": "LONGE DE VOCÊ · LEJOS DE TI",
+      "subtitle" : "História ilustrada sobre saudades e diferenças de famílias multilingues que vivem distantes. Livro bilíngue Português Brasil / Español.",
+      "author" : "Leca e Manuela Pérgola",
       "fund": ""
+    },
+    {
+      "id": 8,
+      "image": "https://ksr-ugc.imgix.net/assets/036/737/317/387b5a39099321a52f3e2c5bc5432753_original.jpg?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1647946707&auto=format&frame=1&q=92&s=677542037f7c3276ff33e7976f14c1e4",
+      "vedio": "https://www.youtube.com/watch?v=sUeD2z3cKWU",
+      "title": "‘Gli Isolani’ (The Islanders) a photobook by Alys Tomlinson",
+      "subtitle" : "https://www.youtube.com/watch?v=sUeD2z3cKWU",
+      "author" : "GB Limited Editions",
+      "fund": ""
+    },
+    {
+      "id": 9,
+      "image": "https://ksr-ugc.imgix.net/assets/036/731/429/ea3c6ff2912df1550ba3a3bc50fa498e_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1647896907&auto=format&frame=1&q=92&s=2d8bbf4499cef4c4f0bb7b958b5bd1e9",
+      "vedio": "https://www.youtube.com/watch?v=M8GHwxkKnOU",
+      "title": "T1 Tomahawk | Professional Digital Tape Measure",
+      "subtitle" : "A jobsite ready digital tape measure with integrated e-paper measuring list, laser line projection, and connected measuring mobile app.",
+      "author" : "REEKON Tools Inc.",
+      "fund": ""
+    }
+  ],
+
+  "interview" : [
+    {
+      "id" : 1,
+      "image" : "https://i0.wp.com/www.shadesofnoir.org.uk/creatives/wp-content/uploads/2019/05/Ocean-Vuong-square.jpg?fit=600%2C600&ssl=1",
+      "about": "Author Ocean Vuong on being generous in your work"
+    },
+    {
+      "id" : 2,
+      "image" : "https://lastfm.freetls.fastly.net/i/u/avatar170s/544460e763f8a043d186c3ab2578ac16",
+      "about": "Musician and writer Michelle Zauner on finding ways to keep going"
+    },
+    {
+      "id" : 3,
+      "image" : "https://tci-assets.s3.amazonaws.com/uploads/TSELF_SOCIAL.jpg",
+      "about": "Visual artist Tschabalala Self on not being afraid of hard work"
+    },
+    {
+      "id" : 4,
+      "image" : "https://cdn.filestackcontent.com/TzDuM8vCRSm5XFXQEwwD",
+      "about": "Composer Danny Elfman on not being afraid of failure"
     }
   ]
 }
