@@ -72,7 +72,7 @@ const Navbar = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Discover</Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Start a project</Link>
+                <Link className="nav-link active" aria-current="page" to="/startProject"> Start Project </Link>
                 </li>
             </ul>
             <ul style={{width:"20vw", position: "absolute", left: "50%", transform: "translate(-50%)", listStyle: "none"}}>
