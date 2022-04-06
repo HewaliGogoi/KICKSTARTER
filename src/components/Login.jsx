@@ -39,12 +39,10 @@ const Login = () => {
   };
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
+    navigate("/")
   };
 
-  const handleHome = () => {
-    navigate("/")
-  }
 
   const { email, password } = formDetails;
   return (
@@ -58,20 +56,22 @@ const Login = () => {
               value={email}
               name = "email"
               onChange={handleChange}
+              required
             />
           <br />
 
           <StyledInput
-              type="text"
+              type="password"
               placeholder="password"
               value={password}
               name = "password"
               onChange={handleChange}
+              required
             />
           
           <br />
           <Forget_password>Forgot your password?</Forget_password>
-          <Button onClick = {handleHome}>Log in</Button> <br />
+          <Button >Log in</Button> <br />
           <Checkbox>
             {" "}
             <input type="checkbox" /> Remember me
