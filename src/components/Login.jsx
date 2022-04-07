@@ -1,10 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
-=======
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import {
   Button,
   Button1,
@@ -18,7 +15,6 @@ import {
   SignUpText,
   StyledInput,
 } from "./Style.module";
->>>>>>> main
 
 import { Container } from "./Style.module";
 
@@ -97,13 +93,9 @@ const Login = () => {
           </GetNotified>
           <ReadMore> Read more </ReadMore>
           <hr />
-<<<<<<< HEAD
-          <label htmlFor="">New to Kickstarter?</label> <Link className="nav-link" to="/SignUp">Sign Up</Link>
-=======
           <NewTo>
             New to Kickstarter? <SignUpText to = "/signup"> Sign up</SignUpText>
           </NewTo>
->>>>>>> main
           <hr />
           <GetNotified>
             This site is protected by reCAPTCHA and the Google
