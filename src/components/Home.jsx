@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import ReactPlayer from 'react-player';
+// import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Responsive from './Responsive';
 
@@ -82,7 +82,7 @@ const Raiser = styled.div`
 
 const Announcement = styled.div`
   border-top: 1px solid #cecece;
-  border-border: 1px solid #cecece;  
+  border-bottom: 1px solid #cecece;  
   display:flex;
   padding:5% 10%;
 
@@ -94,7 +94,7 @@ const Announcement = styled.div`
 
 const Favourites = styled.div`
   border-top: 1px solid #cecece;
-  border-border: 1px solid #cecece;
+  border-bottom: 1px solid #cecece;
   padding:5% 10%;
 `;
 

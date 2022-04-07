@@ -5,6 +5,7 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import Project from './components/Project';
+import Footer from './components/Footer';
 
 
 function App() {
