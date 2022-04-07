@@ -1,8 +1,32 @@
-import React, { Component, useState } from "react";
-import Slider from "react-slick";
+import React, { Component, useState, useEffect} from "react";
+// import Slider from "react-slick";
+import styled from "styled-components";
 
-export default class Responsive extends Component {
-  render() {
+const Carousel = styled.div`
+  // border:2px solid red;
+  width:300px;
+  height:170px;
+  margin-right:2%;
+
+  img{
+    // border:1px solid red;
+    height:80%;
+    width:300px;
+  }
+`;
+
+const Slider = styled.div`
+  width:100%;
+  display:flex;
+  overflow-x: scroll;
+  scroll-behavior:smooth;
+  &::-webkit-scrollbar{
+    display:none;
+  }
+`;
+
+const Responsive =() =>{
+ 
     const settings = {
       className: "center",
       centerMode: true,
@@ -11,15 +35,38 @@ export default class Responsive extends Component {
       slidesToShow: 5,
       speed: 500
     };
+    
+    const [cImage, setCImage] = useState([]);
+    const [scroll, setScroll] = useState(0);
 
-    // const [cpage, setCpage] = useState(1);
-    // const [cImage, setCImage] = useState([]);
+    useEffect(() => {
+      getCdata();
+    }, []);
+    
+    const getCdata = () => {
+        fetch(`http://localhost:3001/favourites`)
+        .then((data) => data.json())
+        .then((data) => setCImage([...data]))
+    }
 
-    // const getCdata = () => {
-    //     fetch(`http://localhost:3001/project?_page=${cpage}&_limit=5`)
-    //     .then((data) => data.json())
-    //     .then((data) => setCImage([...data]))
-    // }
+    let sc=document.getElementById("Carousel");
+    const ScrollLeft = () => {
+      if(sc.scrollLeft != 0){
+        sc.scrollLeft -= 250;
+        setScroll(sc.scrollLeft)
+      }
+    }
+
+    
+    const ScrollRight = () => {
+      if(sc.scrollLeft != 1500){
+        sc.scrollLeft += 250;
+        setScroll(sc.scrollLeft)
+      }
+      // console.log(sc.scrollWidth);
+    } 
+    
+    // const scw = sc.scrollWidth;
 
     return (
       <div style={{position:"relative"}}>
@@ -27,31 +74,20 @@ export default class Responsive extends Component {
               <h6>FRESH FAVORITES</h6>
               <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
               <div>
-                <button ><i className="fa-solid fa-chevron-left"></i></button>
-                <button ><i className="fa-solid fa-chevron-right"></i></button>
+                <button disabled = {scroll<250} onClick={ScrollLeft}><i className="fa-solid fa-chevron-left"></i></button>
+                <button disabled = {scroll>1500} onClick={ScrollRight}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
           </div>
-        <Slider {...settings}>
-          <div>
-            <h3>1</h3>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
+        <Slider id="Carousel">
+          {
+            cImage.map((e)=> <Carousel key={e.id}>
+              <img src={e.image} alt="" />
+              <h5>{e.title}</h5>
+            </Carousel>)
+          }
         </Slider>
       </div>
     );
-  }
 }
+
+export default Responsive;
