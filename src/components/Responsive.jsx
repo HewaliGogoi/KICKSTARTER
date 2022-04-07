@@ -68,12 +68,14 @@ const Responsive =() =>{
 
     return (
       <div style={{position:"relative"}}>
-          <div>
-              <h6>FRESH FAVORITES</h6>
-              <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
+          <div style={{display:"flex", justifyContent:"space-between"}}>
+              <div style={{display:"flex"}}>
+                <h6>FRESH FAVORITES</h6>
+                <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
+              </div>
               <div>
-                <button disabled = {scroll<250} onClick={ScrollLeft}><i className="fa-solid fa-chevron-left"></i></button>
-                <button disabled = {scroll>1500} onClick={ScrollRight}><i className="fa-solid fa-chevron-right"></i></button>
+                <button disabled = {scroll<250} onClick={ScrollLeft} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-left"></i></button>
+                <button disabled = {scroll>1500} onClick={ScrollRight} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
           </div>
 
