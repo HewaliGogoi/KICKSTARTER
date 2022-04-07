@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import Slider from "react-slick";
+//import Slider from "react-slick";
 
 export default class Responsive extends Component {
   render() {
@@ -24,7 +24,7 @@ export default class Responsive extends Component {
     return (
       <div style={{position:"relative"}}>
         <button style={{position:"absolute", left:0}}><i className="fa-solid fa-chevron-left"></i></button>
-        <Slider {...settings}>
+        {/* <Slider {...settings}>
           <div>
             <h3>1</h3>
           </div>
@@ -43,7 +43,7 @@ export default class Responsive extends Component {
           <div>
             <h3>6</h3>
           </div>
-        </Slider>
+        </Slider> */}
         <button style={{position:"absolute", right:0, top:"50%"}}><i className="fa-solid fa-chevron-right"></i></button>
       </div>
     );

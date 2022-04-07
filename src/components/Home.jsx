@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import ReactPlayer from 'react-player';
+//import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Responsive from './Responsive';
 

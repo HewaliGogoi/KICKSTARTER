@@ -140,5 +140,15 @@
       "image": "https://cdn.filestackcontent.com/TzDuM8vCRSm5XFXQEwwD",
       "about": "Composer Danny Elfman on not being afraid of failure"
     }
+  ],
+  
+  "Select": [
+    {"id": 1, "cate": "Arts" },
+    {"id": 2, "cate": "Comics"},
+    {"id": 3, "cate": "Crafts"},
+    {"id":4, "cate": "Dance"},
+    {"id":5, "cate": "Design"},
+    {"id":6, "cate": "Fashion"},
+    {"id":7, "cate": "Film & Video"}
   ]
 }
