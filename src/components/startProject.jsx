@@ -2,13 +2,18 @@ import React from "react";
 import { Categories } from "./Categories";
 import { Arts } from "./Categories/Arts";
 import "./Style/startProject.css";
+import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 function StartProject() {
+
+  let navigate = useNavigate()
+
   return (
     <>
       <div className="header">
         <h1 className="heading">Bring your creative project to life.</h1>
-        <button className="but">Start a project</button>
+        <button className="but" onClick={() => {navigate("/Step1")}}>Start a project</button>
       </div>
 
       <div className="bodyImg">
@@ -33,7 +38,7 @@ function StartProject() {
 
       <div className="main_content">
         <div className="commas">
-          <i class="fa-solid fa-quote-left"></i>
+          <i className="fa-solid fa-quote-left"></i>
         </div>
         <div className="contain">
           We see Kickstarter as a home for creative minds and a wonderful

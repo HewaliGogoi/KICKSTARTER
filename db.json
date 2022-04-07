@@ -141,7 +141,17 @@
       "about": "Composer Danny Elfman on not being afraid of failure"
     }
   ],
-  "favourites":[
+  
+  "Select": [
+    {"id": 1, "cate": "Arts" },
+    {"id": 2, "cate": "Comics"},
+    {"id": 3, "cate": "Crafts"},
+    {"id":4, "cate": "Dance"},
+    {"id":5, "cate": "Design"},
+    {"id":6, "cate": "Fashion"},
+    {"id":7, "cate": "Film & Video"}
+
+    "favourites":[
     {
       "id": 1,
       "image": "https://ksr-ugc.imgix.net/assets/036/895/418/cd438203fdd93c8bc2a15d9beb13265d_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1649197437&auto=format&frame=1&q=92&s=9cef409e72a4b8fd8f82a90cbe10315c",

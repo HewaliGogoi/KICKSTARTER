@@ -173,3 +173,38 @@ hr{
 .sbutton{
     position: absolute;   
 }
+
+.section{
+    margin: 120px 300px;
+}
+
+.primary{
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-right: 80px; 
+}
+
+.primary_desc{
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    color: grey
+}
+
+.dropdown select{
+    display: grid;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 250px;  
+}   
+
+
+.dr{
+    background-color: green;
+}
+
+.sub-button{ 
+    position: absolute;
+    right: 450px;
+}

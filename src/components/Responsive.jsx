@@ -1,7 +1,7 @@
-import React, { Component, useState, useEffect} from "react";
-// import Slider from "react-slick";
-import styled from "styled-components";
 
+import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect} from "react";
+import styled from "styled-components";
 const Carousel = styled.div`
   // border:2px solid red;
   width:300px;
@@ -70,6 +70,9 @@ const Responsive =() =>{
 
     return (
       <div style={{position:"relative"}}>
+
+        <button style={{position:"absolute", left:0}}><i className="fa-solid fa-chevron-left"></i></button>
+
           <div>
               <h6>FRESH FAVORITES</h6>
               <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
@@ -78,6 +81,8 @@ const Responsive =() =>{
                 <button disabled = {scroll>1500} onClick={ScrollRight}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
           </div>
+
+
         <Slider id="Carousel">
           {
             cImage.map((e)=> <Carousel key={e.id}>

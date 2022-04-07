@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-// import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Responsive from './Responsive';
 import right from './right.jpeg';
@@ -8,11 +7,10 @@ import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
 
 const HomeWrapper = styled.div`
-  // border: 1px solid green;
-  // padding: 0px 5%;
+  border: 1px solid green;
+  padding: 0px 5%;
     
 `;
-// import ReactPlayer from 'react-player';
 
 const QuoteWrapper = styled.div`
   padding:1.5rem;
