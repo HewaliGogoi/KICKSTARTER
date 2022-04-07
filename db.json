@@ -44,7 +44,8 @@
       "title": "Deimos Academy",
       "subtitle": "A GM-less, collaborative horror roleplaying game in a coloring book, about adults returning to their creepy old boarding school.",
       "author": "Game And A Curry, LLC",
-      "fund": ""
+      "fund": "10",
+      "goal" : "1000"
     },
     {
       "id": 2,
@@ -53,7 +54,8 @@
       "title": "SmplTrek | Portable Production Sampler",
       "subtitle": "Anytime Anywhere, Create and Stream Your Music!",
       "author": "Yu Endo / SONICWARE",
-      "fund": ""
+      "fund": "500",
+      "goal" : "10000"
     },
     {
       "id": 3,
@@ -62,7 +64,8 @@
       "title": "Tidal Blades 2: Rise of the Unfolders + Cypher System RPG",
       "subtitle": "Two different games, one great world! A campaign-based dungeon-crawl board game and an RPG system to go on endless adventures!",
       "author": "Druid City Games",
-      "fund": ""
+      "fund": "1999",
+      "goal" : "2050"
     },
     {
       "id": 4,
@@ -71,7 +74,8 @@
       "title": "The Farm Family Project",
       "subtitle": "A Fine Art Photobook by Rob MacInnis Featuring 15 Years of Farm Animal Portraits",
       "author": "Rob Macinnis",
-      "fund": ""
+      "fund": "500",
+      "goal" : "6000"
     },
     {
       "id": 5,
@@ -80,7 +84,8 @@
       "title": "Dead by Daylight™: The Board Game",
       "subtitle": "A strategic survival horror experience for 3–5 players. Become a Killer or fight for your life as a Survivor. Death is not an escape.",
       "author": "David B. Talton Jr.",
-      "fund": ""
+      "fund": "84563",
+      "goal" : "90000"
     },
     {
       "id": 6,
@@ -89,7 +94,8 @@
       "title": "Style Shells 2.0 The Ultimate summer companion",
       "subtitle": "Very stylish light weight waterproof shells made with cotton that fold up into a small carry bag for men and women",
       "author": "Sweet Clothing Distribution",
-      "fund": ""
+      "fund": "4000",
+      "goal" : "6777"
     },
     {
       "id": 7,
@@ -98,7 +104,8 @@
       "title": "LONGE DE VOCÊ · LEJOS DE TI",
       "subtitle": "História ilustrada sobre saudades e diferenças de famílias multilingues que vivem distantes. Livro bilíngue Português Brasil / Español.",
       "author": "Leca e Manuela Pérgola",
-      "fund": ""
+      "fund": "3788",
+      "goal" : "5690"
     },
     {
       "id": 8,
@@ -107,7 +114,8 @@
       "title": "‘Gli Isolani’ (The Islanders) a photobook by Alys Tomlinson",
       "subtitle": "https://www.youtube.com/watch?v=sUeD2z3cKWU",
       "author": "GB Limited Editions",
-      "fund": ""
+      "fund": "55633",
+      "goal" : "60000"
     },
     {
       "id": 9,
@@ -116,9 +124,11 @@
       "title": "T1 Tomahawk | Professional Digital Tape Measure",
       "subtitle": "A jobsite ready digital tape measure with integrated e-paper measuring list, laser line projection, and connected measuring mobile app.",
       "author": "REEKON Tools Inc.",
-      "fund": ""
+      "fund": "9754",
+      "goal" : "67777"
     }
   ],
+  
   "interview": [
     {
       "id": 1,
@@ -150,8 +160,9 @@
     {"id":5, "cate": "Design"},
     {"id":6, "cate": "Fashion"},
     {"id":7, "cate": "Film & Video"}
+  ],
 
-    "favourites":[
+  "favourites":[
     {
       "id": 1,
       "image": "https://ksr-ugc.imgix.net/assets/036/895/418/cd438203fdd93c8bc2a15d9beb13265d_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1649197437&auto=format&frame=1&q=92&s=9cef409e72a4b8fd8f82a90cbe10315c",

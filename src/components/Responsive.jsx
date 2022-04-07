@@ -1,5 +1,3 @@
-
-import React, { Component, useState } from "react";
 import React, { Component, useState, useEffect} from "react";
 import styled from "styled-components";
 const Carousel = styled.div`
@@ -70,9 +68,6 @@ const Responsive =() =>{
 
     return (
       <div style={{position:"relative"}}>
-
-        <button style={{position:"absolute", left:0}}><i className="fa-solid fa-chevron-left"></i></button>
-
           <div>
               <h6>FRESH FAVORITES</h6>
               <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>

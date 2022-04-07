@@ -7,8 +7,8 @@ import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
 
 const HomeWrapper = styled.div`
-  border: 1px solid green;
-  padding: 0px 5%;
+  // border: 1px solid green;
+  // padding: 0px 5%;
     
 `;
 
@@ -72,17 +72,13 @@ const RecommendWrapper = styled.div`
   width:50%;
   padding: 2% 0px;
   padding-left: 4%;
-  text-align:left;               
-
-  img{
-    width:30%;
-    margin:10px;
-  }
+  text-align:left;       
 `;
 
 const Raiser = styled.div`
   height : 10px;
   background-color: #037362;
+  width:100%;
 `;
 
 const Announcement = styled.div`
@@ -105,22 +101,29 @@ const Favourites = styled.div`
 `;
 
 const Interview = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
+  display:flex;
+  // width:100vw;
+  justify-content:space-evenly;
+  margin:0% 5%;
+  box-sizing: border-box;
 `;
 
-const Home = () => {
+const Home = ({setClose, setCloseF}) => {
   const [imgData, setImgData] = useState([]);
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const [interview, setInterview] = useState(1);
+  const [interview, setInterview] = useState([]);
 
   useEffect(() => {
    getData();
   }, [page]);
 
-  // useEffect(() => {
-  //   getDataInterview();
-  //  }, []);
+  useEffect(() => {
+    getDataInterview();
+    setClose(false);
+    setCloseF(false);
+   }, []);
   
   const getData = () => {
     fetch(`http://localhost:3001/project?_page=${page}&_limit=3`)
@@ -131,12 +134,11 @@ const Home = () => {
     
   }
 
-  // const getDataInterview = () => {
-  //   fetch(`http://localhost:3001/interview`)
-  //   .then((data) => data.json())
-  //   .then((data) => console.log(data))
-  //   .then((data) => {setInterview([...data])})
-  // }
+  const getDataInterview = () => {
+    fetch(`http://localhost:3001/interview`)
+    .then((data) => data.json())
+    .then((data) => setInterview([...data]))
+  }
 
   const handleImage = () => {
     navigate("/projects")
@@ -174,7 +176,7 @@ const Home = () => {
           <FeaturedWrapper>
             <p>FEATURED PROJECT</p>
             <img onClick={handleImage} src="https://ksr-ugc.imgix.net/assets/036/376/565/baf56221a9a9e48409de65c6f4eec67c_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644987976&auto=format&frame=1&q=92&s=c1153462ed6ce402483846711c2c79b9" alt="" />
-            <Raiser></Raiser>
+            <Raiser style={{width:"30%"}}></Raiser>
             <h3>Where We Go Together or The Flashlight Play</h3>
             <h6>Free, immersive, puppets. You & three kids break into a theater to do a play in the dark.</h6>
             <p>By Kevin Michael Wesson</p>
@@ -184,7 +186,11 @@ const Home = () => {
             {
               imgData.map((e) => <div key={e.id}>
                 <div style={{display:"flex", borderBottom:"1px solid #cecece"}}>
-                  <img src={e.image} alt="" />
+                  <div style={{position:"relative", maxWidth:"30%", margin:"10px"}}>
+                    <img style = {{width:"100%"}}src={e.image} alt="" />
+                    <div style={{backgroudColor:"red", position:"absolute", bottom:"0"}}></div>
+                    <Raiser style={{ zIndex:"2", width:`${((+e.fund)/(+e.goal))*100}%`}}>{console.log((e.fund/e.goal)*100)}</Raiser>
+                  </div>
                   <div>
                     <h6>{e.title}</h6>
                     <p>By {e.author}</p>
@@ -230,16 +236,12 @@ const Home = () => {
             </div>
         </Announcement>
         <Interview>
-          {/* {
-            interview.map((e) => <div key={e.id}>
-              <div style={{display:"flex"}}>
-                <img src={e.image} alt="" />
-                <div>
-                  <h6>{e.about}</h6>
-                </div>
-              </div>
+          {
+            interview.map((e) => <div style={{width:"17%", margin:"1%"}} key={e.id}>
+              <img src={e.image} style={{width:"100%", height:"100%"}} alt="" />
+              <h6>{e.about}</h6>
             </div>)
-          } */}
+          }
         </Interview>
     </HomeWrapper>
   )
