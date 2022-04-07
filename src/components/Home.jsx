@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import Responsive from './Responsive';
 
 const HomeWrapper = styled.div`
-  // border: 1px solid green;
-  // padding: 0px 5%;
+  border: 1px solid green;
+  padding: 0px 5%;
     
 `;
 // import ReactPlayer from 'react-player';
