@@ -20,15 +20,12 @@ function App() {
   return (
     <div className="App">
       <Navbar close={close} setClose={setClose}/> 
-      {/* <Login/> */}
-     {/* <SignUp/> */}
-     {/* <Home/> */}
        <Routes>
         <Route path = "/" element = {<Home setClose={setClose} setCloseF={setCloseF}/>}/>
         <Route path = "/StartProject" element = {<StartProject setClose={setClose} setCloseF={setCloseF}/>}/>
         <Route path = "/signup" element = {<SignUp />}/>
         <Route path = "/login" element = {<Login />}/>
-        <Route path = "/Project" element = {<Project />}/>
+        <Route path = "/projects" element = {<Project setClose={setClose}/>}/>
         <Route path = "/Step1" element = {<Step1 setClose={setClose} setCloseF={setCloseF}/>} />
         <Route path = '/Step2' element = {<Step2 />} /> 
         <Route path = '/Step3' element = {<Step3 />} />

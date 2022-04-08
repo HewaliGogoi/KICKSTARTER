@@ -75,7 +75,7 @@ const RecommendWrapper = styled.div`
   text-align:left;       
 `;
 
-const Raiser = styled.div`
+export const Raiser = styled.div`
   height : 10px;
   background-color: #037362;
   width:100%;
@@ -198,16 +198,20 @@ const Home = ({setClose, setCloseF}) => {
                 </div>
               </div>)
             }
-            <div style = {{display : "flex"}}>
-              <button disabled={page==1} onClick={()=>setPage(page-1)} style = {{borderRadius:"50%", width:"6%", height:"30px"}}>
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-              <p onClick={()=>setPage((prev)=>prev = 1)}>1</p>
-              <p onClick={()=>setPage((prev)=>prev = 2)}>2</p>
-              <p onClick={()=>setPage((prev)=>prev = 3)}>3</p>
-              <button disabled={page==3} onClick={()=>setPage(page+1)} style = {{borderRadius:"50%", width:"6%", height:"30px"}}>
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
+            <div style = {{display : "flex", flex:"1", padding:"7%", position:"relative"}}>
+              <div style={{display : "flex", justifyContent:"space-evenly", position:"absolute", right:"0", width:"40%"}}>
+                <button disabled={page==1} onClick={()=>setPage(page-1)} style = {{borderRadius:"50%", width:"6%", height:"30px", border:"none", flex:"1", backgroundColor:"white"}}>
+                  <i className="fa-solid fa-chevron-left"></i>
+                </button>
+                <div style={{display: "flex", margin:"0% 2%", flex:"2", justifyContent:"space-evenly", cursor:"pointer"}}>
+                  <p onClick={()=>setPage((prev)=>prev = 1)}>1</p>
+                  <p onClick={()=>setPage((prev)=>prev = 2)}>2</p>
+                  <p onClick={()=>setPage((prev)=>prev = 3)}>3</p>
+                </div>
+                <button disabled={page==3} onClick={()=>setPage(page+1)} style = {{borderRadius:"50%", width:"6%", height:"30px", border:"none", backgroundColor:"white", flex:"1"}}>
+                  <i className="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
             </div>
           </RecommendWrapper>
         </Overview>
@@ -235,6 +239,9 @@ const Home = ({setClose, setCloseF}) => {
               <a href="">Find out more</a>
             </div>
         </Announcement>
+        <Favourites>
+          <Responsive/>
+        </Favourites>
         <Interview>
           {
             interview.map((e) => <div style={{width:"17%", margin:"1%"}} key={e.id}>
