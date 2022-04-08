@@ -109,8 +109,8 @@ export const StyledInput = styled.input`
  export const Footer_headings = styled.div`
   border : 1px solid #cecece;
   display : flex;
-  justify-content : center;
-  padding: 10px 0px;
+  justify-content : left;
+  padding: 10px 10%;
 
   a{
     color :black;
@@ -128,12 +128,12 @@ export const Footer_text_section = styled.div`
 `
 export const Copyright = styled.span`
     float: left;
-    margin-left: 8%;
+    padding-left:10%;
 `
 
 export const Social_media = styled.div`
     float: middle;
-    margin-right: 7%;
+    margin-right: 10%;
     i{
         margin-left: 20px;
     }
@@ -151,8 +151,8 @@ export const Settings_section = styled.div`
 export const Footer_bottom = styled.div`
   border : 1px solid #cecece;
   display : flex;
-  justify-content : center;
-  padding: 10px 0px;
+  justify-content : left;
+  padding: 15px 10%;
   width: 100%;
   margin-top: 10px;
 

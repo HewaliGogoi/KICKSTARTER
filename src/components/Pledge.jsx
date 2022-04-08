@@ -10,7 +10,7 @@ const Summary = styled.div`
     width:49%;
 `;
 
-const Payment = styled.div`
+const Payment = styled.form`
     width:49%;
     background-color: #F6F2EB;
     padding: 2% 5%;
@@ -20,7 +20,8 @@ const Payment = styled.div`
 const Box = styled.label`
     display:flex;
     flex-direction:column;
-    border:2px solid red;
+    // border:2px solid red;
+    padding-bottom:2%;
 `;
 
 const Pledge = () => {
@@ -54,11 +55,11 @@ const Pledge = () => {
                 <input type="text" placeholder="Cardholder name" style={{fontStyle:"italic", border:"1px solid #cecece", padding:"2%", margin:"1%"}}/>
             </Box>
             <div style={{display:"flex", justifyContent:"space-between"}}>
-                <Box htmlFor="">
+                <Box htmlFor="" style={{width:"50%"}}>
                     Expiration
                     <input type="text" placeholder="MM/YY" style={{fontStyle:"italic", border:"1px solid #cecece", padding:"2%", margin:"1%"}}/>
                 </Box>
-                <Box htmlFor="">
+                <Box htmlFor="" style={{width:"50%"}}>
                     Security code
                     <input type="text" placeholder="CVC" style={{fontStyle:"italic", border:"1px solid #cecece", padding:"2%", margin:"1%"}}/>
                 </Box>
@@ -67,6 +68,7 @@ const Pledge = () => {
                 Zip/Postal code
                 <input type="text" placeholder="Zip/Postal code" style={{fontStyle:"italic", border:"1px solid #cecece", padding:"2%", margin:"1%"}}/>
             </Box>
+            <button style={{width:"100%", padding:"2%", backgroundColor:"#037362", color:"white"}}>Pledge</button>
         </Payment>
     </PledgeWrapper>
   )
