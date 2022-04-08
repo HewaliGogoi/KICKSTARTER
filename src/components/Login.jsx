@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {loginAction} from '../redux/action'
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   Button,
   Button1,
@@ -41,18 +41,29 @@ const Login = () => {
     });
   };
   const auth = useSelector(state=>state.isAuth)
-  // console.log(auth)
+  const user = useSelector(state=>state.user)
 
+  console.log(auth)
+  console.log(user, "47")
   useEffect(() => {
-    auth?navigate("/"):navigate("/login")
+    // auth?navigate("/"):navigate("/login")
   }, [])
   
 
-  const dispatch = useDispatch()
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginAction(formDetails))
+    if(formDetails.email == user.email && formDetails.password == user.password){
+      navigate("/")
+    }
+    else{
+      alert("Please provide correct credentials")
+    }
+    // dispatch(loginAction(formDetails))
+    // auth && navigate("/")
   };
+  // console.log(auth)
+
 
 
   const { email, password } = formDetails;

@@ -1,7 +1,6 @@
-
-// import React, { Component, useState } from "react";
 import React, { Component, useState, useEffect} from "react";
 import styled from "styled-components";
+import { Raiser } from "./Home";
 const Carousel = styled.div`
   // border:2px solid red;
   width:300px;
@@ -16,10 +15,12 @@ const Carousel = styled.div`
 `;
 
 const Slider = styled.div`
+  border:2px solid red;
   width:100%;
   display:flex;
   overflow-x: scroll;
   scroll-behavior:smooth;
+  height:400px;
   &::-webkit-scrollbar{
     display:none;
   }
@@ -37,16 +38,25 @@ const Responsive =() =>{
     };
     
     const [cImage, setCImage] = useState([]);
+    const [cImage1, setCImage1] = useState([]);
+    
     const [scroll, setScroll] = useState(0);
 
     useEffect(() => {
       getCdata();
+      getCdata1();
     }, []);
     
     const getCdata = () => {
         fetch(`http://localhost:3001/favourites`)
         .then((data) => data.json())
-        .then((data) => setCImage([...data]))
+        .then((data) => {setCImage([...data])})
+    }
+    
+    const getCdata1 = () => {
+      fetch(`http://localhost:3001/favourites1`)
+      .then((data) => data.json())
+      .then((data) => setCImage1([...data]))
     }
 
     let sc=document.getElementById("Carousel");
@@ -65,29 +75,31 @@ const Responsive =() =>{
       }
       // console.log(sc.scrollWidth);
     } 
-    
-    // const scw = sc.scrollWidth;
 
     return (
       <div style={{position:"relative"}}>
-
-        {/* <button style={{position:"absolute", left:0}}><i className="fa-solid fa-chevron-left"></i></button> */}
-
-          <div>
-              <h6>FRESH FAVORITES</h6>
-              <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
+          <div style={{display:"flex", justifyContent:"space-between"}}>
+              <div style={{display:"flex"}}>
+                <h6>FRESH FAVORITES</h6>
+                <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
+              </div>
               <div>
-                <button disabled = {scroll<250} onClick={ScrollLeft}><i className="fa-solid fa-chevron-left"></i></button>
-                <button disabled = {scroll>1500} onClick={ScrollRight}><i className="fa-solid fa-chevron-right"></i></button>
+                <button disabled = {scroll<=1} onClick={ScrollLeft} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-left"></i></button>
+                <button disabled = {scroll>2750} onClick={ScrollRight} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
           </div>
-
 
         <Slider id="Carousel">
           {
             cImage.map((e)=> <Carousel key={e.id}>
-              <img src={e.image} alt="" />
+              <div>
+                <img src={e.image} alt="" />
+                <Raiser style={{ zIndex:"2", width:`${((+e.fund)/(+e.goal))*100}%`}}/>
+              </div>
+              {/* <h1>{e.id}</h1> */}
               <h5>{e.title}</h5>
+              <p>{e.description}</p>
+              <p>By {e.author}</p>
             </Carousel>)
           }
         </Slider>

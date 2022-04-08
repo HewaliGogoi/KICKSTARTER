@@ -46,7 +46,7 @@ const Topic = styled.div`
   }
 `;
 
-const Navbar = () => {
+const Navbar = ({close, setClose}) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Discover</Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/startProject"> Start Project </Link>
+                <Link className="nav-link active" aria-current="page" to="/StartProject" > Start Project </Link>
                 </li>
             </ul>
             <ul style={{width:"20vw", position: "absolute", left: "50%", transform: "translate(-50%)", listStyle: "none"}}>
@@ -92,7 +92,8 @@ const Navbar = () => {
             </div>
         </div>
         </nav>
-        <Topic>
+        {
+          !close && <Topic>
           <Link className="nav-link active" aria-current="page" to="/">Arts</Link>
           <Link className="nav-link active" aria-current="page" to="/">Comics & Illustration</Link>
           <Link className="nav-link active" aria-current="page" to="/">Design & Tech</Link>
@@ -102,6 +103,7 @@ const Navbar = () => {
           <Link className="nav-link active" aria-current="page" to="/">Music</Link>
           <Link className="nav-link active" aria-current="page" to="/">Publishing</Link>
         </Topic>
+        }
     </>
   )
 }

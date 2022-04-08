@@ -3,7 +3,7 @@ import "./Style/startProject.css";
 import {useNavigate} from "react-router-dom";
 
 
-function Step1() {
+function Step1({setClose, setCloseF}) {
 
   let navigate = useNavigate()
   
@@ -20,6 +20,8 @@ function Step1() {
     }
 
     select();
+    setClose(true);
+    setCloseF(true);
 
   }, [setArts]);
 
