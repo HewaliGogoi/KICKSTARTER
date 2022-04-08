@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import {useSelector} from 'react-redux';
 
 const PledgeWrapper = styled.div`
     display:flex;
@@ -8,6 +9,8 @@ const PledgeWrapper = styled.div`
 
 const Summary = styled.div`
     width:49%;
+    text-align:left;
+    padding: 4% 4%;
 `;
 
 const Payment = styled.form`
@@ -27,23 +30,32 @@ const Box = styled.label`
 const Pledge = () => {
     const id = useParams();
 
-    useEffect(() => {
-        getData();
-    }, [])
+    // useEffect(() => {
+    //     getData();
+    // }, [])
 
-    const getData = () => {
-        fetch(`http://localhost:3001/project/${id}`)
-        .then((res) => res.json())
-        .then((res)=>console.log(res))
-    } 
+    // const getData = () => {
+    //     fetch(`http://localhost:3001/project/${id}`)
+    //     .then((res) => res.json())
+    //     .then((res)=>console.log(res))
+    // } 
+
+    const single = useSelector(state=>state.single);
   return (
     <PledgeWrapper>
         <Summary>
             <h3>Pledge summary</h3>
             <p>We won’t charge you at this time. If the project reaches its funding goal, your payment method will be charged when the campaign ends. You’ll receive a confirmation email at hewaligogoi22@gmail.com when your pledge is successfully processed.</p>
-            <h5>Your pledge</h5>
-            <p>US$<input type="text" name="amount" placeholder="Enter your amount"/></p>
-            <h6>Total amount <h6></h6> </h6>
+            <div style={{display:"flex"}}>
+                <img src={single.image} style ={{width:"30%"}}alt="" />
+                <div style={{paddingLeft:"5%"}}>
+                    <h6>{single.title}</h6>
+                    <p>By {single.author}</p>
+                </div>
+            </div>
+            <h5 style={{paddingTop:"5%"}}>Your pledge</h5>
+            <p style={{margin:"5% 0%"}}>US$<input type="text" name="amount" placeholder="Enter your amount"/></p>
+            <h6 style={{borderTop:"1px solid #cecece"}}>Total amount</h6>
         </Summary>
         <Payment>
             <Box htmlFor="">

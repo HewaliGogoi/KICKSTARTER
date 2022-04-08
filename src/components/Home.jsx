@@ -5,6 +5,7 @@ import Responsive from './Responsive';
 import right from './right.jpeg';
 import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
+import Pagination from './Pagination';
 
 const HomeWrapper = styled.div`
   // border: 1px solid red;
@@ -284,19 +285,7 @@ const Home = ({setClose, setCloseF}) => {
           <RecommendWrapper>
             <p>RECOMMENDED FOR YOU</p>
             {
-              imgData.map((e) => <div key={e.id}>
-                <div style={{display:"flex", borderBottom:"1px solid #cecece", cursor:"pointer"}} onClick={()=>handleImage(e.id)}>
-                  <div style={{position:"relative", maxWidth:"30%", margin:"10px"}}>
-                    <img style = {{width:"100%"}}src={e.image} alt="" />
-                    <div style={{backgroudColor:"red", position:"absolute", bottom:"0"}}></div>
-                    <Raiser style={{ zIndex:"2", width:`${((+e.fund)/(+e.goal))*100}%`}}>{console.log((e.fund/e.goal)*100)}</Raiser>
-                  </div>
-                  <div>
-                    <h6>{e.title}</h6>
-                    <p>By {e.author}</p>
-                  </div>
-                </div>
-              </div>)
+              imgData.map((e) => <Pagination e={e} handleImage={handleImage}/>)
             }
             <div style = {{display : "flex", flex:"1", padding:"7%", position:"relative"}}>
               <div style={{display : "flex", justifyContent:"space-evenly", position:"absolute", right:"0", width:"40%"}}>

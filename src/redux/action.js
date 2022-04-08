@@ -1,4 +1,4 @@
-import  {AUTH, LOGIN,LOGOUT} from './actionType'
+import  {AUTH, DATA, LOGIN,LOGOUT} from './actionType'
 
 
 export const loginAction =(payload)=>{
@@ -18,5 +18,12 @@ export const logoutAction =()=>{
 export const changeAuth =()=>{
     return {
         type:AUTH
+    }
+}
+
+export const dataAction = (payload) => {
+    return {
+        type:DATA,
+        payload
     }
 }
