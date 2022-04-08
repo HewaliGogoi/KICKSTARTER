@@ -36,36 +36,36 @@ export const Footer = () => {
         </Footer_headings>
         <Footer_text_section>
             <div className="about-section">
-                <h6>About</h6>
+                <h6 style={{fontWeight:"600"}}>About</h6>
                 <ul>
                     <a href="https://www.kickstarter.com/about?ref=global-footer"
-                    target="_blank">About us</a>
+                    target="_blank" style={{color:"black", textDecoration:"none"}}>About us</a>
                     <br />
 
-                    <a href="https://www.kickstarter.com/charter?ref=global-footer" target="_blank">Our chapter</a>
+                    <a href="https://www.kickstarter.com/charter?ref=global-footer" target="_blank" style={{color:"black", textDecoration:"none"}}>Our chapter</a>
                     <br />
 
-                    <a href="https://www.kickstarter.com/help/stats?ref=global-footer" target="_blank">Stats</a>
+                    <a href="https://www.kickstarter.com/help/stats?ref=global-footer" target="_blank" style={{color:"black", textDecoration:"none"}}>Stats</a>
                     <br />
 
-                    <a href="https://www.kickstarter.com/press?ref=global-footer" target="_blank">Press</a>
+                    <a href="https://www.kickstarter.com/press?ref=global-footer" target="_blank" style={{color:"black", textDecoration:"none"}}>Press</a>
                     <br />
 
-                    <a href="https://www.kickstarter.com/jobs?ref=global-footer" target="_blank">Jobs</a>
+                    <a href="https://www.kickstarter.com/jobs?ref=global-footer" target="_blank" style={{color:"black", textDecoration:"none"}}>Jobs</a>
                 </ul>
             </div>
 
             <div className="support-section">
-                <h6>Support</h6>
+                <h6 style={{fontWeight:"600"}}>Support</h6>
                 <ul>
-                    <a href="https://help.kickstarter.com/hc/en-us" target="_blank">
+                    <a href="https://help.kickstarter.com/hc/en-us" target="_blank" style={{color:"black", textDecoration:"none"}}>
                     Help Center
                     </a>
                     <br />
 
                     <a
                     href="https://www.kickstarter.com/rules?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Our Rules
                     </a>
@@ -73,7 +73,7 @@ export const Footer = () => {
 
                     <a
                     href="https://www.kickstarter.com/help/handbook?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Creator Handbook
                     </a>
@@ -81,7 +81,7 @@ export const Footer = () => {
 
                     <a
                     href="https://www.kickstarter.com/patrons?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Patrons
                     </a>
@@ -89,7 +89,7 @@ export const Footer = () => {
 
                     <a
                     href="https://www.kickstarter.com/help/brand_assets?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Brand assets
                     </a>
@@ -98,11 +98,11 @@ export const Footer = () => {
             </div>
 
             <div className="more-section">
-                <h6>More from Kickstarter</h6>
+                <h6 style={{fontWeight:"600"}}>More from Kickstarter</h6>
                 <ul>
                     <a
                     href="https://www.kickstarter.com/newsletters?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Newsletter
                     </a>
@@ -110,7 +110,7 @@ export const Footer = () => {
 
                     <a
                     href="https://www.kickstarter.com/magazine?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Kickstarter Magazine
                     </a>
@@ -118,7 +118,7 @@ export const Footer = () => {
 
                     <a
                     href="https://thecreativeindependent.com/?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     The Creative Independent
                     </a>
@@ -126,7 +126,7 @@ export const Footer = () => {
 
                     <a
                     href="https://www.kickstarter.com/mobile?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Mobile apps
                     </a>
@@ -134,7 +134,7 @@ export const Footer = () => {
 
                     <a
                     href="https://www.kickstarter.com/research?ref=global-footer"
-                    target="_blank"
+                    target="_blank" style={{color:"black", textDecoration:"none"}}
                     >
                     Research
                     </a>
@@ -167,7 +167,7 @@ export const Footer = () => {
 
                     <Settings_section>
                         <div className="language-settings">
-                            <select>
+                            <select style={{border:"none", boxShadow:"0px 0px 1px 1px #cecece"}}>
                                     <option value="en">English</option>
                                     <option value="en">Hindi</option>
                                     <option value="en">Chinese</option>
@@ -178,7 +178,7 @@ export const Footer = () => {
                             </select> 
                         </div>
                         <div className="currency-settings">
-                            <select>
+                            <select style={{border:"none", boxShadow:"0px 0px 1px 1px #cecece"}}>
                                     <option value="USD">$  US Dollar (USD)</option>
                                     <option value="USD"> Euro (EUR)</option>
                                     <option value="USD">  Zloty (PLN))</option>

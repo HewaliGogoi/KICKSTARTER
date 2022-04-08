@@ -18,100 +18,12 @@
   },
   "user": [
     {
-      "name": "sumi",
-      "email": "sumi@gmail.com",
-      "password": "123",
-      "Repassword": "123",
-      "ReEmail": "sumi@gmail.com",
+      "name": "Hewali Gogoi",
+      "email": "hewaligogoi22@gmail.com",
+      "password": "1",
+      "Repassword": "1",
+      "ReEmail": "hewaligogoi22@gmail.com",
       "id": 1
-    },
-    {
-      "name": "sumi",
-      "email": "sumi@gmail.com",
-      "password": "123",
-      "Repassword": "",
-      "ReEmail": "",
-      "id": 2
-    },
-    {
-      "name": "sumitra",
-      "email": "sumitra7898sumi@gmail.com",
-      "password": "123",
-      "Repassword": "123",
-      "ReEmail": "",
-      "id": 3
-    },
-    {
-      "name": "sumi",
-      "email": "sumitra9039sumi@gmail.com",
-      "password": "123",
-      "Repassword": "123",
-      "ReEmail": "",
-      "id": 4
-    },
-    {
-      "name": "sumi",
-      "email": "sumitra9039sumi@gmail.com",
-      "password": "123",
-      "Repassword": "123",
-      "ReEmail": "",
-      "id": 5
-    },
-    {
-      "name": "smita",
-      "email": "sumi@gmail.com",
-      "password": "123",
-      "Repassword": "123",
-      "ReEmail": "",
-      "id": 6
-    },
-    {
-      "name": "sumi",
-      "email": "sumi@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "",
-      "id": 7
-    },
-    {
-      "name": "sumitra",
-      "email": "sumitra7898sumi@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "",
-      "id": 8
-    },
-    {
-      "name": "sumi",
-      "email": "sumitra9039sumi@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "",
-      "id": 9
-    },
-    {
-      "name": "smita",
-      "email": "sumi@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "",
-      "id": 10
-    },
-    {
-      "name": "smita",
-      "email": "sumi@gmail.com",
-      "password": "123",
-      "Repassword": "123",
-      "ReEmail": "",
-      "id": 11
-    },
-    {
-      "name": "sumitra",
-      "email": "sumitra7898sumi@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "",
-      "id": 12
     }
   ],
   "project": [

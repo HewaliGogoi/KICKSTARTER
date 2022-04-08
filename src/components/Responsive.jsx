@@ -23,6 +23,7 @@ const Slider = styled.div`
   overflow-x: scroll;
   scroll-behavior:smooth;
   height:500px;
+  margin-top:3%;
   &::-webkit-scrollbar{
     display:none;
   }
@@ -85,9 +86,10 @@ const Responsive =() =>{
                 <h6>FRESH FAVORITES</h6>
                 <p style={{marginLeft:"2%"}}>Discover more <i className="fa-solid fa-chevron-right"></i></p>
               </div>
-              <div style={{width:"10%", justifyContent:"space-between"}}>
-                <button disabled = {scroll<=1} onClick={ScrollLeft} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-left"></i></button>
-                <button disabled = {scroll>2750} onClick={ScrollRight} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-right"></i></button>
+  
+              <div style={{width:"10%", display:"flex", justifyContent:"space-between"}}>
+                <button disabled = {scroll<=1} onClick={ScrollLeft} style={{borderRadius:"50%", border:"none", backgroundColor:"white"}}><i className="fa-solid fa-chevron-left"></i></button>
+                <button disabled = {scroll>2750} onClick={ScrollRight} style={{borderRadius:"50%", border:"none", backgroundColor:"white"}}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
           </div>
 
