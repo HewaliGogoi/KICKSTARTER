@@ -84,13 +84,13 @@ const SignUp = () => {
            <hr />
            <LoginText>Sign up</LoginText>
 
-            <StyledInput type="text" placeholder="Name" name="name" value={name} onChange={handleChange}/>
+            <StyledInput type="text" placeholder="Name" name="name" value={name} onChange={handleChange} required/>
             <br />
-            <StyledInput onClick={handleShowEmail} type="text" placeholder="Email" name="email" value={email} onChange={handleChange}/>
+            <StyledInput onClick={handleShowEmail} type="text" placeholder="Email" name="email" value={email} onChange={handleChange} required/>
             {/* <br /> */}
             {show?<StyledInput  type="text" placeholder="Re-enter email" name="ReEmail" value={ReEmail} onChange={handleChange}/>:""}
             <br />
-            <StyledInput onClick={handlePass}   type="password" placeholder="Password" name="password" value={password} onChange={handleChange}/>
+            <StyledInput onClick={handlePass}   type="password" placeholder="Password" name="password" value={password} onChange={handleChange} required/>
             {pass?<StyledInput type="text"  placeholder="Re-enter password" name="Repassword" value={Repassword} onChange={handleChange}/>:""}
 
             <br /><br/>
@@ -117,7 +117,7 @@ const SignUp = () => {
         <ReadMore> Read more </ReadMore>
         
      </form>
-      {/* <Link to="/login"><button>Redirect to Login</button></Link> */}
+      
       </Container>
     </Body>
   );
