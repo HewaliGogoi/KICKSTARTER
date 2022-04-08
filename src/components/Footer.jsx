@@ -9,6 +9,7 @@ export const Footer = () => {
     <div className="footer-container" style={{position:"relative"}}>
         <img src={bottom} style={{position:"absolute", zIndex:-10, bottom:0, right:0, width:"30%"}} alt="" />
         <Footer_headings>
+            <h4>Explore</h4>
             <Link className="nav-link active" aria-current="page" to="/">
             Arts
             </Link>
@@ -150,6 +151,7 @@ export const Footer = () => {
                             <span> Kickstarter, PBC © 2022</span>
                         </Copyright>
                         <Social_media>
+                        <div>
                             <a href="#" target="_blank">
                             <i className="fa-brands fa-facebook"></i>
                             </a>
@@ -162,6 +164,8 @@ export const Footer = () => {
                             <a href="#" target="_blank">
                             <i className="fa-brands fa-youtube"></i>
                             </a>
+                        </div>
+                           
                         </Social_media>
                      </div>
 
@@ -191,24 +195,26 @@ export const Footer = () => {
                     </Settings_section>
             </div>
             <Footer_bottom>
-                <Link className="nav-link active" aria-current="page" to="/">
-                Trust $ Safety
-                </Link>
-                <Link className="nav-link active" aria-current="page" to="/">
-                Terms of Use
-                </Link>
-                <Link className="nav-link active" aria-current="page" to="/">
-                Privacy Policy
-                </Link>
-                <Link className="nav-link active" aria-current="page" to="/">
-                Cookie Policy
-                </Link>
-                <Link className="nav-link active" aria-current="page" to="/">
-                Accessbility Statement
-                </Link>
-                <Link className="nav-link active" aria-current="page" to="/">
-                CA Notice of Consent
-                </Link>
+
+                    <Link className="nav-link active" aria-current="page" to="/">
+                    Trust $ Safety
+                    </Link>
+                    <Link className="nav-link active" aria-current="page" to="/">
+                    Terms of Use
+                    </Link>
+                    <Link className="nav-link active" aria-current="page" to="/">
+                    Privacy Policy
+                    </Link>
+                    <Link className="nav-link active" aria-current="page" to="/">
+                    Cookie Policy
+                    </Link>
+                    <Link className="nav-link active" aria-current="page" to="/">
+                    Accessbility Statement
+                    </Link>
+                    <Link className="nav-link active" aria-current="page" to="/">
+                    CA Notice of Consent
+                    </Link>
+               
             </Footer_bottom>
     </div>
   );

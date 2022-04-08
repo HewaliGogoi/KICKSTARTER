@@ -111,9 +111,20 @@ export const StyledInput = styled.input`
   display : flex;
   justify-content : left;
   padding: 10px 10%;
+  font-size: 13px;
+  
 
   a{
     color :black;
+  }
+  /* h3{
+      display: none;
+    
+  } */
+
+  @media (max-width:380px){
+      flex-direction: column;
+      text-align:left;    
   }
 `
 export const Footer_text_section = styled.div`
@@ -122,13 +133,36 @@ export const Footer_text_section = styled.div`
     column-gap: 13%;
     margin-left:22%;
     text-align: left;
+    font-size: 13px;
+    
     h6{
         margin-left: 16%;
+    }
+    @media (max-width:380px){
+      flex-direction: row;
+      text-align:left; 
+      column-gap:4%;
+      margin-left:3%;
+      justify-content: space-between;
+      font-size: 13px;
+      
+      ul{
+          margin-right:-3px;
+          padding-left: 0;
+      }
+      h6{
+          margin-left:0;
+      }
+      .about-section{
+          margin-left:5%;
+      }
+
     }
 `
 export const Copyright = styled.span`
     float: left;
     padding-left:10%;
+   
 `
 
 export const Social_media = styled.div`
@@ -136,8 +170,23 @@ export const Social_media = styled.div`
     margin-right: 10%;
     i{
         margin-left: 20px;
+        color: black;
     }
-    
+
+    @media(max-width:380px) {
+        margin-right:0;
+        
+        div{
+            width: 50%;
+            margin-top: 10%;
+            padding-bottom:8%;
+        }
+        i{
+            width: 10%;
+            height: 30px;
+            margin-top:10px;
+        }
+    }
 `
 export const Settings_section = styled.div`
     float: right;
@@ -147,6 +196,16 @@ export const Settings_section = styled.div`
     margin-top:-1.5%;
     border: transparent;
     cursor: pointer;
+
+    @media(max-width:380px) {
+        flex-direction: column;
+        
+        select{
+            width:135%;
+            margin-left:-20%;
+            padding: 10px;
+        }
+    }
 `
 export const Footer_bottom = styled.div`
   border : 1px solid #cecece;
@@ -160,4 +219,14 @@ export const Footer_bottom = styled.div`
     color :black;
     font-size: small;
   }
+
+  @media(max-width:380px) {
+   display: grid;
+   grid-template-columns:auto auto ;
+   grid-template-rows: auto;
+   width: 100%;
+   justify-content: space-between;
+   
+  }
+
 `

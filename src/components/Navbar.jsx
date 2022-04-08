@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import styled from 'styled-components';
+import { logoutAction } from '../redux/action';
 import Kickstarter from './Kickstarter.svg';
 
 const Logo = styled.div`
@@ -55,13 +57,26 @@ const Navbar = ({close, setClose}) => {
     setOpen(!open);
   }
 
+  
   const handleHome = () => {
     navigate("/")
   }
+  const isAuth = useSelector(state=>state.isAuth)
+  const [auth,setAuth] = useState(isAuth)
+  useEffect(() => {
+    setAuth(isAuth)
+  }, [])
+  
+  const dispatch = useDispatch()
 
+  const handleLogOut = ()=>{
+    dispatch(logoutAction())
+    alert("logged out successfully")
+  }
   return (
     <>
         <nav className="navbar navbar-expand-lg navbar-light bg-white" style={{padding:"1rem 0px"}}>
+    
         <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -87,7 +102,7 @@ const Navbar = ({close, setClose}) => {
                 <SearchButton onClick={handleSearch} style={open ? {display:"block"}:{display : "none"}}><i className="fa-solid fa-xmark"></i></SearchButton>
             </form>
             <li className="nav-item" style={{listStyle: "none"}}>
-            <Link className="nav-link" to="/login">Log In</Link>
+           {isAuth?<button onClick={()=>handleLogOut()}>Logout</button>:<Link className="nav-link" to="/login">Log In</Link>} 
             </li>
             </div>
         </div>

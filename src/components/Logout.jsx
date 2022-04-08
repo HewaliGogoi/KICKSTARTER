@@ -1,17 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Logout.css';
-
+import {logoutAction} from '../redux/action'
 
 const Logout = () => {
 
-    const user = useSelector(user)
+    const user = useSelector(state=>state.user)
     const dispatch = useDispatch();
     const handleLogout = (e) =>{
         e.preventDefault();
 
-        dispatch(Logout())
+        dispatch(logoutAction())
     }
+    console.log()
   return (
     <div className='logout'>
         <h1>Welcome <span className='user_name'>{user.name}</span></h1>
