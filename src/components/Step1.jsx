@@ -2,14 +2,31 @@ import React, { useEffect } from "react";
 import "./Style/startProject.css";
 import { useNavigate } from "react-router-dom";
 
-function Step1() {
-  let navigate = useNavigate();
+function Step1({setClose, setCloseF}) {
 
+  let navigate = useNavigate();
   const [Select, setSelect] = React.useState([]);
   
-  React.useEffect(() => {
+
+  useEffect(() => {
     getData();
   }, []);
+  
+  const [Arts, setArts] = React.useState([]);
+  const [Artid, setArtId] = React.useState("");
+  const [Comics, setComics] = React.useState([]);
+
+  useEffect(() => {
+    const select = async () => {
+      const req = await fetch("http://localhost:3004/Select");
+      const getres = await req.json();
+      console.log(getres);
+      setArts(await getres); 
+    }
+
+    select();
+    setClose(true);
+    setCloseF(true);
 
   const getData = async () => {
     const res = await fetch("http://localhost:3001/select");

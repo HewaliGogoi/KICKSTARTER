@@ -7,9 +7,8 @@ import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
 
 const HomeWrapper = styled.div`
-  border: 1px solid green;
-  ${'' /* padding: 0px 5%; */}
-    
+  // border: 1px solid green;
+  // padding: 0px 5%;
 `;
 
 const QuoteWrapper = styled.div`
@@ -72,17 +71,13 @@ const RecommendWrapper = styled.div`
   width:50%;
   padding: 2% 0px;
   padding-left: 4%;
-  text-align:left;               
-
-  img{
-    width:30%;
-    margin:10px;
-  }
+  text-align:left;       
 `;
 
-const Raiser = styled.div`
-  height : 10px;
+export const Raiser = styled.div`
+  height : 7px;
   background-color: #037362;
+  width:100%;
 `;
 
 const Announcement = styled.div`
@@ -105,22 +100,30 @@ const Favourites = styled.div`
 `;
 
 const Interview = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
+  // display:flex;
+  width:80%;
+  height:600px;
+  margin:auto;
+  // box-sizing: border-box;
+  text-align:left;
 `;
 
-const Home = () => {
+const Home = ({setClose, setCloseF}) => {
   const [imgData, setImgData] = useState([]);
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
-  const [interview, setInterview] = useState(1);
+  const [interview, setInterview] = useState([]);
 
   useEffect(() => {
    getData();
   }, [page]);
 
-  // useEffect(() => {
-  //   getDataInterview();
-  //  }, []);
+  useEffect(() => {
+    getDataInterview();
+    setClose(false);
+    setCloseF(false);
+   }, []);
   
   const getData = () => {
     fetch(`http://localhost:3001/project?_page=${page}&_limit=3`)
@@ -130,15 +133,15 @@ const Home = () => {
       console.log(data)})
   }
 
-  // const getDataInterview = () => {
-  //   fetch(`http://localhost:3001/interview`)
-  //   .then((data) => data.json())
-  //   .then((data) => console.log(data))
-  //   .then((data) => {setInterview([...data])})
-  // }
+  const getDataInterview = () => {
+    fetch(`http://localhost:3001/interview`)
+    .then((data) => data.json())
+    .then((data) => setInterview([...data]))
+  }
 
-  const handleImage = () => {
-    navigate("/projects")
+  const handleImage = (e) => {
+    // console.log(e)
+    navigate(`/projects/${e}`);
   }
 
   return (
@@ -172,8 +175,8 @@ const Home = () => {
         <Overview>
           <FeaturedWrapper>
             <p>FEATURED PROJECT</p>
-            <img onClick={handleImage} src="https://ksr-ugc.imgix.net/assets/036/376/565/baf56221a9a9e48409de65c6f4eec67c_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644987976&auto=format&frame=1&q=92&s=c1153462ed6ce402483846711c2c79b9" alt="" />
-            <Raiser></Raiser>
+            <img src="https://ksr-ugc.imgix.net/assets/036/376/565/baf56221a9a9e48409de65c6f4eec67c_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644987976&auto=format&frame=1&q=92&s=c1153462ed6ce402483846711c2c79b9" alt="" />
+            <Raiser style={{width:"30%"}}></Raiser>
             <h3>Where We Go Together or The Flashlight Play</h3>
             <h6>Free, immersive, puppets. You & three kids break into a theater to do a play in the dark.</h6>
             <p>By Kevin Michael Wesson</p>
@@ -182,8 +185,12 @@ const Home = () => {
             <p>RECOMMENDED FOR YOU</p>
             {
               imgData.map((e) => <div key={e.id}>
-                <div style={{display:"flex", borderBottom:"1px solid #cecece"}}>
-                  <img src={e.image} alt="" />
+                <div style={{display:"flex", borderBottom:"1px solid #cecece", cursor:"pointer"}} onClick={()=>handleImage(e.id)}>
+                  <div style={{position:"relative", maxWidth:"30%", margin:"10px"}}>
+                    <img style = {{width:"100%"}}src={e.image} alt="" />
+                    <div style={{backgroudColor:"red", position:"absolute", bottom:"0"}}></div>
+                    <Raiser style={{ zIndex:"2", width:`${((+e.fund)/(+e.goal))*100}%`}}>{console.log((e.fund/e.goal)*100)}</Raiser>
+                  </div>
                   <div>
                     <h6>{e.title}</h6>
                     <p>By {e.author}</p>
@@ -191,16 +198,20 @@ const Home = () => {
                 </div>
               </div>)
             }
-            <div style = {{display : "flex"}}>
-              <button disabled={page==1} onClick={()=>setPage(page-1)} style = {{borderRadius:"50%", width:"6%", height:"30px"}}>
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-              <p onClick={()=>setPage((prev)=>prev = 1)}>1</p>
-              <p onClick={()=>setPage((prev)=>prev = 2)}>2</p>
-              <p onClick={()=>setPage((prev)=>prev = 3)}>3</p>
-              <button disabled={page==3} onClick={()=>setPage(page+1)} style = {{borderRadius:"50%", width:"6%", height:"30px"}}>
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
+            <div style = {{display : "flex", flex:"1", padding:"7%", position:"relative"}}>
+              <div style={{display : "flex", justifyContent:"space-evenly", position:"absolute", right:"0", width:"40%"}}>
+                <button disabled={page==1} onClick={()=>setPage(page-1)} style = {{borderRadius:"50%", width:"6%", height:"30px", border:"none", flex:"1", backgroundColor:"white"}}>
+                  <i className="fa-solid fa-chevron-left"></i>
+                </button>
+                <div style={{display: "flex", margin:"0% 2%", flex:"2", justifyContent:"space-evenly", cursor:"pointer"}}>
+                  <p onClick={()=>setPage((prev)=>prev = 1)}>1</p>
+                  <p onClick={()=>setPage((prev)=>prev = 2)}>2</p>
+                  <p onClick={()=>setPage((prev)=>prev = 3)}>3</p>
+                </div>
+                <button disabled={page==3} onClick={()=>setPage(page+1)} style = {{borderRadius:"50%", width:"6%", height:"30px", border:"none", backgroundColor:"white", flex:"1"}}>
+                  <i className="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
             </div>
           </RecommendWrapper>
         </Overview>
@@ -228,17 +239,20 @@ const Home = () => {
               <a href="">Find out more</a>
             </div>
         </Announcement>
+        <Favourites>
+          <Responsive/>
+        </Favourites>
         <Interview>
-          {/* {
-            interview.map((e) => <div key={e.id}>
-              <div style={{display:"flex"}}>
-                <img src={e.image} alt="" />
-                <div>
-                  <h6>{e.about}</h6>
-                </div>
+          <h6 style={{margin:"5% 0% 2% 0%"}}>INTERVIEWS FROM THE CREATIVE INDEPENDENT</h6>
+          <div style={{display:"flex", justifyContent : "space-between"}}>
+            {
+              interview.map((e) => <div style={{width:"23%"}} key={e.id}>
+                <img src={e.image} style={{width:"100%", height:"100%"}} alt="" />
+                <h6 style={{margin:"10% 0%"}}>{e.about}</h6>
               </div>
-            </div>)
-          } */}
+              )
+            }
+          </div>
         </Interview>
     </HomeWrapper>
   )

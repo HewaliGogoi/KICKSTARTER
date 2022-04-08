@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Categories } from "./Categories";
 import { Arts } from "./Categories/Arts";
 import "./Style/startProject.css";
 import {useNavigate} from "react-router-dom";
 import {Link} from "react-router-dom";
 
-function StartProject() {
+function StartProject({close, setClose, closeF, setCloseF}) {
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    setClose(true);
+    setCloseF(false);
+  },[])
 
   return (
     <>
@@ -167,4 +172,4 @@ function StartProject() {
   );
 }
 
-export { StartProject };
+export default StartProject;
