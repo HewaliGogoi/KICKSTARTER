@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Project = () => {
+const Project = ({setClose}) => {
   return (
-    <div>Project</div>
+    <>
+      
+    </>
   )
 }
 
