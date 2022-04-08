@@ -6,7 +6,6 @@ function Step1({setClose, setCloseF}) {
 
   let navigate = useNavigate();
   const [Select, setSelect] = React.useState([]);
-  
 
   useEffect(() => {
     getData();
