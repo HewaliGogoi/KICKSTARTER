@@ -9,7 +9,7 @@ export const Footer = () => {
     <div className="footer-container" style={{position:"relative"}}>
         <img src={bottom} style={{position:"absolute", zIndex:-10, bottom:0, right:0, width:"30%"}} alt="" />
         <Footer_headings>
-            <h4>Explore</h4>
+            {/* <h4>Explore</h4> */}
             <Link className="nav-link active" aria-current="page" to="/">
             Arts
             </Link>
