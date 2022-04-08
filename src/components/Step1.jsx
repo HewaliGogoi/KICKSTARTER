@@ -6,7 +6,6 @@ function Step1({setClose, setCloseF}) {
 
   let navigate = useNavigate();
   const [Select, setSelect] = React.useState([]);
-  
 
   useEffect(() => {
     getData();
@@ -27,6 +26,7 @@ function Step1({setClose, setCloseF}) {
     select();
     setClose(true);
     setCloseF(true);
+  }, []);
 
   const getData = async () => {
     const res = await fetch("http://localhost:3001/select");
