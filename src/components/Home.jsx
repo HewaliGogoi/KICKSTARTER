@@ -7,8 +7,8 @@ import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
 
 const HomeWrapper = styled.div`
-  border: 1px solid green;
-  padding: 0px 5%;
+  /* border: 1px solid green;
+  padding: 0px 5%; */
     
 `;
 

@@ -133,7 +133,7 @@ export const Copyright = styled.span`
 
 export const Social_media = styled.div`
     float: middle;
-    margin-right: 5%;
+    margin-right: 7%;
     i{
         margin-left: 20px;
     }

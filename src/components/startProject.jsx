@@ -167,4 +167,4 @@ function StartProject() {
   );
 }
 
-export { StartProject };
+export default StartProject;

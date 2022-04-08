@@ -150,6 +150,7 @@
     {"id":5, "cate": "Design"},
     {"id":6, "cate": "Fashion"},
     {"id":7, "cate": "Film & Video"}
+  ],
 
     "favourites":[
     {
