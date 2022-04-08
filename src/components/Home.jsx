@@ -76,7 +76,7 @@ const RecommendWrapper = styled.div`
 `;
 
 export const Raiser = styled.div`
-  height : 10px;
+  height : 7px;
   background-color: #037362;
   width:100%;
 `;
@@ -102,11 +102,12 @@ const Favourites = styled.div`
 
 const Interview = styled.div`
   // border: 1px solid red;
-  display:flex;
-  // width:100vw;
-  justify-content:space-evenly;
-  margin:0% 5%;
-  box-sizing: border-box;
+  // display:flex;
+  width:80%;
+  height:600px;
+  margin:auto;
+  // box-sizing: border-box;
+  text-align:left;
 `;
 
 const Home = ({setClose, setCloseF}) => {
@@ -140,8 +141,9 @@ const Home = ({setClose, setCloseF}) => {
     .then((data) => setInterview([...data]))
   }
 
-  const handleImage = () => {
-    navigate("/projects")
+  const handleImage = (e) => {
+    // console.log(e)
+    navigate(`/projects/${e}`);
   }
 
   return (
@@ -175,7 +177,7 @@ const Home = ({setClose, setCloseF}) => {
         <Overview>
           <FeaturedWrapper>
             <p>FEATURED PROJECT</p>
-            <img onClick={handleImage} src="https://ksr-ugc.imgix.net/assets/036/376/565/baf56221a9a9e48409de65c6f4eec67c_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644987976&auto=format&frame=1&q=92&s=c1153462ed6ce402483846711c2c79b9" alt="" />
+            <img src="https://ksr-ugc.imgix.net/assets/036/376/565/baf56221a9a9e48409de65c6f4eec67c_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644987976&auto=format&frame=1&q=92&s=c1153462ed6ce402483846711c2c79b9" alt="" />
             <Raiser style={{width:"30%"}}></Raiser>
             <h3>Where We Go Together or The Flashlight Play</h3>
             <h6>Free, immersive, puppets. You & three kids break into a theater to do a play in the dark.</h6>
@@ -185,7 +187,7 @@ const Home = ({setClose, setCloseF}) => {
             <p>RECOMMENDED FOR YOU</p>
             {
               imgData.map((e) => <div key={e.id}>
-                <div style={{display:"flex", borderBottom:"1px solid #cecece"}}>
+                <div style={{display:"flex", borderBottom:"1px solid #cecece", cursor:"pointer"}} onClick={()=>handleImage(e.id)}>
                   <div style={{position:"relative", maxWidth:"30%", margin:"10px"}}>
                     <img style = {{width:"100%"}}src={e.image} alt="" />
                     <div style={{backgroudColor:"red", position:"absolute", bottom:"0"}}></div>
@@ -243,12 +245,16 @@ const Home = ({setClose, setCloseF}) => {
           <Responsive/>
         </Favourites>
         <Interview>
-          {
-            interview.map((e) => <div style={{width:"17%", margin:"1%"}} key={e.id}>
-              <img src={e.image} style={{width:"100%", height:"100%"}} alt="" />
-              <h6>{e.about}</h6>
-            </div>)
-          }
+          <h6 style={{margin:"5% 0% 2% 0%"}}>INTERVIEWS FROM THE CREATIVE INDEPENDENT</h6>
+          <div style={{display:"flex", justifyContent : "space-between"}}>
+            {
+              interview.map((e) => <div style={{width:"23%"}} key={e.id}>
+                <img src={e.image} style={{width:"100%", height:"100%"}} alt="" />
+                <h6 style={{margin:"10% 0%"}}>{e.about}</h6>
+              </div>
+              )
+            }
+          </div>
         </Interview>
     </HomeWrapper>
   )

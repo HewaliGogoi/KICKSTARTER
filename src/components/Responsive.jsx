@@ -1,26 +1,28 @@
 import React, { Component, useState, useEffect} from "react";
 import styled from "styled-components";
 import { Raiser } from "./Home";
+
 const Carousel = styled.div`
-  // border:2px solid red;
+  // border:2px solid green;
   width:300px;
-  height:170px;
+  height:100%;
   margin-right:2%;
+  text-align:left;
 
   img{
     // border:1px solid red;
-    height:80%;
+    // height:100%;
     width:300px;
   }
 `;
 
 const Slider = styled.div`
-  border:2px solid red;
+  // border:2px solid red;
   width:100%;
   display:flex;
   overflow-x: scroll;
   scroll-behavior:smooth;
-  height:400px;
+  height:500px;
   &::-webkit-scrollbar{
     display:none;
   }
@@ -79,11 +81,11 @@ const Responsive =() =>{
     return (
       <div style={{position:"relative"}}>
           <div style={{display:"flex", justifyContent:"space-between"}}>
-              <div style={{display:"flex"}}>
+              <div style={{display:"flex", width:"28%", justifyContent:"space-between"}}>
                 <h6>FRESH FAVORITES</h6>
-                <p>Discover more <i className="fa-solid fa-chevron-right"></i></p>
+                <p style={{marginLeft:"2%"}}>Discover more <i className="fa-solid fa-chevron-right"></i></p>
               </div>
-              <div>
+              <div style={{width:"10%", justifyContent:"space-between"}}>
                 <button disabled = {scroll<=1} onClick={ScrollLeft} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-left"></i></button>
                 <button disabled = {scroll>2750} onClick={ScrollRight} style={{borderRadius:"50%"}}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
@@ -96,10 +98,11 @@ const Responsive =() =>{
                 <img src={e.image} alt="" />
                 <Raiser style={{ zIndex:"2", width:`${((+e.fund)/(+e.goal))*100}%`}}/>
               </div>
-              {/* <h1>{e.id}</h1> */}
-              <h5>{e.title}</h5>
-              <p>{e.description}</p>
-              <p>By {e.author}</p>
+              <div style={{padding:"10% 0%"}}>
+                <h5>{e.title}</h5>
+                <p style={{padding:"5% 0%"}}>{e.description}</p>
+                <p>By {e.author}</p>
+              </div>
             </Carousel>)
           }
         </Slider>
