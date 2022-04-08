@@ -172,4 +172,4 @@ function StartProject({close, setClose, closeF, setCloseF}) {
   );
 }
 
-export { StartProject };
+export default StartProject;

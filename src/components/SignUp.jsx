@@ -2,6 +2,9 @@ import React,{useState} from "react";
 import { P,Button, Button1, Button2, Container, Checkbox1, Checkbox2, GetNotified, ReadMore, LoginText,StyledInput} from './Style.module'
 import styled from 'styled-components'
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginAction } from "../redux/action";
+
 
 const Body = styled.div`
   background-color: whitesmoke;
@@ -12,9 +15,12 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
+    Repassword:"",
+    ReEmail:""
   });
-
   const [list, setList] = useState([])
+  const dispatch = useDispatch()
+// console.log(dispatch)
 
   const navigate = useNavigate();
 
@@ -39,15 +45,22 @@ const SignUp = () => {
   }
 //   console.log(userSignUp)
   const handleSubmit = (e) => {
-
+   
     e.preventDefault();
       fetch(`http://localhost:3001/user`,{
          method:"POST",
          body:JSON.stringify(userSignUp),
          headers:{
-             "content-type":"Application/json"
+             "content-Type":"Application/json"
          }
-     }).then(()=> getData()) ;
+     })
+     .then((res)=> (res.json())) 
+      .then((res) => {
+        let payload = {email:res.email, password:res.password}
+        console.log(payload)
+        dispatch(loginAction(payload))
+        navigate("/login")
+      })
   };
 
   const getData = () =>{
@@ -59,8 +72,8 @@ const SignUp = () => {
     navigate('/login');
   }
 
-  const {name,email,password} = userSignUp;
-
+  const {name,email,password,Repassword,ReEmail} = userSignUp;
+ 
 
   return (
     <Body>
@@ -75,10 +88,10 @@ const SignUp = () => {
             <br />
             <StyledInput onClick={handleShowEmail} type="text" placeholder="Email" name="email" value={email} onChange={handleChange}/>
             {/* <br /> */}
-            {show?<StyledInput  type="text" placeholder="Re-enter email" name="email" value={email} onChange={handleChange}/>:""}
+            {show?<StyledInput  type="text" placeholder="Re-enter email" name="ReEmail" value={ReEmail} onChange={handleChange}/>:""}
             <br />
             <StyledInput onClick={handlePass}   type="password" placeholder="Password" name="password" value={password} onChange={handleChange}/>
-            {pass?<StyledInput type="text"  placeholder="Re-enter password" name="email" value={password} onChange={handleChange}/>:""}
+            {pass?<StyledInput type="text"  placeholder="Re-enter password" name="Repassword" value={Repassword} onChange={handleChange}/>:""}
 
             <br /><br/>
             <Checkbox1><input type="checkbox" /> Send me a weekly mix of handpicked projects,<br/> plus occasional Kickstarter news </Checkbox1>
