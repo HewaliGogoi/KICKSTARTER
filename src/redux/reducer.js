@@ -1,4 +1,4 @@
-import {LOGIN,LOGOUT} from './actionType'
+import {LOGIN,LOGOUT,AUTH} from './actionType'
 
 let init = {user:{email:"",password:""}, isAuth:false}
 
@@ -7,8 +7,13 @@ export const reducer = (state = init, {type, payload}) =>{
     switch(type){
         case LOGIN:
         return{
-            ...state,user:payload,isAuth:true
+            ...state,user:{...payload}
         }
+
+        case AUTH:
+            return {
+                ...state,isAuth:!state.isAuth
+            }
         case LOGOUT:
         return {
             ...state,user:{email:"",password:""},isAuth:false

@@ -1,4 +1,4 @@
-import  {LOGIN,LOGOUT} from './actionType'
+import  {AUTH, LOGIN,LOGOUT} from './actionType'
 
 
 export const loginAction =(payload)=>{
@@ -9,9 +9,14 @@ export const loginAction =(payload)=>{
 }
 
 
-export const logoutAction =(payload)=>{
+export const logoutAction =()=>{
     return{
-        type:LOGOUT,
-        payload
+        type:LOGOUT
+    }
+}
+
+export const changeAuth =()=>{
+    return {
+        type:AUTH
     }
 }

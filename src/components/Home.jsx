@@ -193,9 +193,10 @@ const Interview = styled.div`
   text-align:left;
 
   @media (max-width:380px){
-    border: 1px solid red;
+    // border: 1px solid red;
     width:380px;
     padding:5% 5%;
+    // height:1000px;
   }
 `;
 
@@ -204,12 +205,7 @@ const Box = styled.div`
     // border: 1px solid green;
     width:340px;
     // padding:5% 5%;
-    flex-direction:column;
-
-    div{
-      border: 1px solid red;
-      width:100px;
-    }
+    display:inline-block;
   }
 `;
 
