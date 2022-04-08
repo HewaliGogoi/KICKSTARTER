@@ -8,7 +8,7 @@ import Announce_logo from './Announce_logo.png';
 
 const HomeWrapper = styled.div`
   border: 1px solid green;
-  padding: 0px 5%;
+  ${'' /* padding: 0px 5%; */}
     
 `;
 
@@ -128,7 +128,6 @@ const Home = () => {
     // .then((data) => console.log(data))
     .then((data) => {setImgData([...data]);
       console.log(data)})
-    
   }
 
   // const getDataInterview = () => {
