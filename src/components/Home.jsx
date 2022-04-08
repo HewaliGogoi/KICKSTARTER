@@ -7,12 +7,35 @@ import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
 
 const HomeWrapper = styled.div`
-  // border: 1px solid green;
+  // border: 1px solid red;
   // padding: 0px 5%;
+
+  @media (max-width:380px){
+    p:first-child{
+      // border: 1px solid red;
+      padding-left:8%;
+      font-size:90%;
+      text-align:left;
+    }
+  }
+`;
+const BackImg = styled.img`
+  @media (max-width:380px){
+    display:none;
+  }
 `;
 
 const QuoteWrapper = styled.div`
   padding:1.5rem;
+
+  @media (max-width:380px){
+    // border: 1px solid red;
+    width:380px;
+    h1{
+      font-size:170%;
+      text-align:left;
+    }
+  }
 `;
 
 const BodyWrapper = styled.div`
@@ -43,12 +66,31 @@ const Track = styled.div`
       color:grey;
     }
   }
+
+  @media (max-width:380px){
+    // border: 1px solid red;
+    width:380px;
+    flex-direction:column;
+
+    div{
+      width:90%;
+      margin:2px;
+    }
+  }
 `;
 
 const Overview = styled.div`
   // border: 1px solid brown;  
   display:flex;
   padding: 3% 0px;
+
+  @media (max-width:380px){
+    // border: 1px solid red;
+    width:380px;
+    margin-left:-35px;
+    flex-direction:column;
+    padding:0;
+  }
 `;
   
   const FeaturedWrapper = styled.div`
@@ -65,13 +107,34 @@ const Overview = styled.div`
   img{
     width: 100%;
   }
+
+  @media (max-width:380px){
+    border-bottom: 1px solid #cecece;
+    width:100%;
+
+    img{
+      // border: 1px solid yellow;
+      margin:auto;
+    }
+  }
 `;
 
 const RecommendWrapper = styled.div`
   width:50%;
   padding: 2% 0px;
   padding-left: 4%;
-  text-align:left;       
+  text-align:left;  
+  
+  @media (max-width:380px){
+    border-bottom: 1px solid #cecece;
+    // border: 1px solid yellow;
+    width:100%;
+
+    img{
+      // border: 1px solid yellow;
+      margin:auto;
+    }
+  }
 `;
 
 export const Raiser = styled.div`
@@ -91,12 +154,33 @@ const Announcement = styled.div`
     width:50%;
     height:250px;
   }
+
+  @media (max-width:380px){
+    // border-bottom: 1px solid #cecece;
+    // border: 1px solid red;
+    width:380px;
+    flex-direction: column;
+    padding: 20% 5%;
+    
+    img{
+      // border: 1px solid yellow;
+      width:100%;
+      margin:auto;
+      margin-bottom:5%;
+    }
+  }
 `;
 
 const Favourites = styled.div`
   border-top: 1px solid #cecece;
   border-bottom: 1px solid #cecece;
   padding:5% 10%;
+
+  @media (max-width:380px){
+    // border: 1px solid red;
+    width:380px;
+    padding:10% 5%;
+  }
 `;
 
 const Interview = styled.div`
@@ -107,6 +191,26 @@ const Interview = styled.div`
   margin:auto;
   // box-sizing: border-box;
   text-align:left;
+
+  @media (max-width:380px){
+    border: 1px solid red;
+    width:380px;
+    padding:5% 5%;
+  }
+`;
+
+const Box = styled.div`
+  @media (max-width:380px){
+    // border: 1px solid green;
+    width:340px;
+    // padding:5% 5%;
+    flex-direction:column;
+
+    div{
+      border: 1px solid red;
+      width:100px;
+    }
+  }
 `;
 
 const Home = ({setClose, setCloseF}) => {
@@ -147,7 +251,7 @@ const Home = ({setClose, setCloseF}) => {
   return (
     <HomeWrapper>
       <div style={{position:"relative"}}>
-        <img src={right} style={{position:"absolute", left:0, width:"150px", top:"30px"}} alt="" />
+        <BackImg src={right} style={{position:"absolute", left:0, width:"150px", top:"30px"}} alt="" />
         <QuoteWrapper>
           <h1>Creative work shows us what’s possible.</h1>
           <h1>Help fund it here.</h1>
@@ -169,7 +273,7 @@ const Home = ({setClose, setCloseF}) => {
             </div>
           </Track>
         </div>
-        <img src={left} style={{position:"absolute", right:0, width:"200px", top:"30px", zIndex:"-10"}} alt="" />
+        <BackImg src={left} style={{position:"absolute", right:0, width:"200px", top:"30px", zIndex:"-10"}} alt="" />
       </div>
       <BodyWrapper>
         <Overview>
@@ -244,7 +348,7 @@ const Home = ({setClose, setCloseF}) => {
         </Favourites>
         <Interview>
           <h6 style={{margin:"5% 0% 2% 0%"}}>INTERVIEWS FROM THE CREATIVE INDEPENDENT</h6>
-          <div style={{display:"flex", justifyContent : "space-between"}}>
+          <Box style={{display:"flex", justifyContent : "space-between"}}>
             {
               interview.map((e) => <div style={{width:"23%"}} key={e.id}>
                 <img src={e.image} style={{width:"100%", height:"100%"}} alt="" />
@@ -252,7 +356,7 @@ const Home = ({setClose, setCloseF}) => {
               </div>
               )
             }
-          </div>
+          </Box>
         </Interview>
     </HomeWrapper>
   )

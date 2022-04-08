@@ -29,6 +29,20 @@ const Slider = styled.div`
   }
 `;
 
+const Header = styled.div`
+  @media (max-width: 380px){
+    // border:2px solid black;
+    width:300px;
+    text-align:left;
+
+    div:first-child{
+      // border:2px solid green;
+      // width:0px;
+      flex-direction:column;
+    }
+  }
+`;
+
 const Responsive =() =>{
  
     const settings = {
@@ -81,7 +95,7 @@ const Responsive =() =>{
 
     return (
       <div style={{position:"relative"}}>
-          <div style={{display:"flex", justifyContent:"space-between"}}>
+          <Header style={{display:"flex", justifyContent:"space-between"}}>
               <div style={{display:"flex", width:"28%", justifyContent:"space-between"}}>
                 <h6>FRESH FAVORITES</h6>
                 <p style={{marginLeft:"2%"}}>Discover more <i className="fa-solid fa-chevron-right"></i></p>
@@ -91,7 +105,7 @@ const Responsive =() =>{
                 <button disabled = {scroll<=1} onClick={ScrollLeft} style={{borderRadius:"50%", border:"none", backgroundColor:"white"}}><i className="fa-solid fa-chevron-left"></i></button>
                 <button disabled = {scroll>2750} onClick={ScrollRight} style={{borderRadius:"50%", border:"none", backgroundColor:"white"}}><i className="fa-solid fa-chevron-right"></i></button>
               </div>
-          </div>
+          </Header>
 
         <Slider id="Carousel">
           {
