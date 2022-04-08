@@ -6,25 +6,17 @@ import {Link} from "react-router-dom";
 function Step3() {
   let navigate = useNavigate();
 
-  const [Arts, setArts] = React.useState([]);
-  const [Artid, setArtId] = React.useState("");
-  const [Comics, setComics] = React.useState([]);
+  const [Country, setCountry] = React.useState([]);
+  
+  React.useEffect(() => {
+    getData();
+  }, []);
 
-  useEffect(() => {
-    const select = async () => {
-      const req = await fetch("http://localhost:3004/Select");
-      const getres = await req.json();
-      console.log(getres);
-      setArts(await getres);
-    };
-
-    select();
-  }, [setArts]);
-
-  const handleArt = (e) => {
-    const getArtid = e.target.value;
-    Artid(getArtid);
-    e.preventDefault();
+  const getData = async () => {
+    const res = await fetch("http://localhost:3001/Country");
+    const getSelect = await res.json();
+    console.log(getSelect);
+    setCountry(await getSelect);
   };
 
   return (
@@ -38,12 +30,9 @@ function Step3() {
         </p>
 
         <div className="row dropdown">
-          <div className="form-group col-md-4">
-            <select
-              name="Art"
-              className="form-control"
-              onChange={(e) => handleArt(e)}
-            >
+          <div
+            className="form-group col-md-4">
+            <select onChange={(e) => console.log(e.target.value)} name="Select" className="form-control">
               <option
                 className="btn-secondary dropdown-toggle dr"
                 type="button"
@@ -51,16 +40,14 @@ function Step3() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Select your country
+                - Select -
               </option>
-              {Arts.map((getArt) => {
-                <option key={getArt.Artid} value={getArt.Artid}>
-                  {getArt.cart}
-                </option>;
+              {Country.map((item) => {
+                return <option key={item.id} value={item.cate}>{item.Cname}</option>;
               })}
             </select>
-          </div>
-              {/* <div>
+          </div>   
+          {/* <div>
               <p> who's eligible to run a Kickstarter project? </p>
               </div> */}
         </div>

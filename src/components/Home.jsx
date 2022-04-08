@@ -9,7 +9,6 @@ import Announce_logo from './Announce_logo.png';
 const HomeWrapper = styled.div`
   // border: 1px solid green;
   // padding: 0px 5%;
-    
 `;
 
 const QuoteWrapper = styled.div`
@@ -132,7 +131,6 @@ const Home = ({setClose, setCloseF}) => {
     // .then((data) => console.log(data))
     .then((data) => {setImgData([...data]);
       console.log(data)})
-    
   }
 
   const getDataInterview = () => {
