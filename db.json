@@ -24,6 +24,22 @@
       "Repassword": "1",
       "ReEmail": "hewaligogoi22@gmail.com",
       "id": 1
+    },
+    {
+      "name": "sumi",
+      "email": "sumi@gmail.com",
+      "password": "1",
+      "Repassword": "1",
+      "ReEmail": "",
+      "id": 2
+    },
+    {
+      "name": "sumi",
+      "email": "sumi@gmail.com",
+      "password": "1",
+      "Repassword": "1",
+      "ReEmail": "",
+      "id": 3
     }
   ],
   "project": [
@@ -141,52 +157,169 @@
     }
   ],
   "Select": [
-
-    {"id": 1, "cate": "Arts"},       
-    {"id": 2, "cate": "Comics" },
-    {"id": 3, "cate": "Crafts"},
-    {"id": 4, "cate": "Dance"},
-    {"id": 5, "cate": "Design"},
-    {"id": 6, "cate": "Fashion"},
-    {"id": 7, "cate": "Film & Video"},
-    {"id": 8, "cate": "Food"},
-    {"id": 9, "cate": "Games"},
-    {"id":10, "cate": "Journalism"},
-    {"id": 11, "cate": "Music"},
-    {"id": 12, "cate": "Photography"},
-    {"id": 13, "cate": "Publishing"},
-    {"id": 14, "cate": "Technology"},
-    {"id": 15, "cate": "Theater"}
+    {
+      "id": 1,
+      "cate": "Arts"
+    },
+    {
+      "id": 2,
+      "cate": "Comics"
+    },
+    {
+      "id": 3,
+      "cate": "Crafts"
+    },
+    {
+      "id": 4,
+      "cate": "Dance"
+    },
+    {
+      "id": 5,
+      "cate": "Design"
+    },
+    {
+      "id": 6,
+      "cate": "Fashion"
+    },
+    {
+      "id": 7,
+      "cate": "Film & Video"
+    },
+    {
+      "id": 8,
+      "cate": "Food"
+    },
+    {
+      "id": 9,
+      "cate": "Games"
+    },
+    {
+      "id": 10,
+      "cate": "Journalism"
+    },
+    {
+      "id": 11,
+      "cate": "Music"
+    },
+    {
+      "id": 12,
+      "cate": "Photography"
+    },
+    {
+      "id": 13,
+      "cate": "Publishing"
+    },
+    {
+      "id": 14,
+      "cate": "Technology"
+    },
+    {
+      "id": 15,
+      "cate": "Theater"
+    }
   ],
-
   "Country": [
-    {"id":1, "Cname" : "Australia "},
-    {"id":2, "Cname" :"Austria"},
-    {"id":3, "Cname" : "Belgium"},
-    {"id":4, "Cname" :"Canada"},
-    {"id":5, "Cname" : "Denmark"},
-    {"id":6, "Cname" : "France"},
-    {"id":7, "Cname" : "Germany"},
-    {"id":8, "Cname" : "Greece"},
-    {"id":9, "Cname" :"Hong Kong"},
-    {"id":10,"Cname" : "Ireland"},
-    {"id":11, "Cname" :"Italy"},
-    {"id":12, "Cname" :"Japan"},
-    {"id":13, "Cname" :"Luxembourg"},
-    {"id":14, "Cname" :"Mexico"},
-    {"id":15, "Cname" :"New Zealand"},
-    {"id":16, "Cname" :"Norway"},
-    {"id":17,  "Cname" :"Poland"},
-    {"id":18, "Cname" : "Singapore"},
-    {"id":19, "Cname" :"Slovenia"},
-    {"id":20, "Cname" :"Spain"},
-    {"id":21, "Cname" :"Sweden"},
-    {"id":22, "Cname" :"Switzerland"},
-    {"id":23, "Cname" :"the Netherland"},
-    {"id":24, "Cname" :"the United kingdom"},
-    {"id":25, "Cname" :"the United States"}
+    {
+      "id": 1,
+      "Cname": "Australia "
+    },
+    {
+      "id": 2,
+      "Cname": "Austria"
+    },
+    {
+      "id": 3,
+      "Cname": "Belgium"
+    },
+    {
+      "id": 4,
+      "Cname": "Canada"
+    },
+    {
+      "id": 5,
+      "Cname": "Denmark"
+    },
+    {
+      "id": 6,
+      "Cname": "France"
+    },
+    {
+      "id": 7,
+      "Cname": "Germany"
+    },
+    {
+      "id": 8,
+      "Cname": "Greece"
+    },
+    {
+      "id": 9,
+      "Cname": "Hong Kong"
+    },
+    {
+      "id": 10,
+      "Cname": "Ireland"
+    },
+    {
+      "id": 11,
+      "Cname": "Italy"
+    },
+    {
+      "id": 12,
+      "Cname": "Japan"
+    },
+    {
+      "id": 13,
+      "Cname": "Luxembourg"
+    },
+    {
+      "id": 14,
+      "Cname": "Mexico"
+    },
+    {
+      "id": 15,
+      "Cname": "New Zealand"
+    },
+    {
+      "id": 16,
+      "Cname": "Norway"
+    },
+    {
+      "id": 17,
+      "Cname": "Poland"
+    },
+    {
+      "id": 18,
+      "Cname": "Singapore"
+    },
+    {
+      "id": 19,
+      "Cname": "Slovenia"
+    },
+    {
+      "id": 20,
+      "Cname": "Spain"
+    },
+    {
+      "id": 21,
+      "Cname": "Sweden"
+    },
+    {
+      "id": 22,
+      "Cname": "Switzerland"
+    },
+    {
+      "id": 23,
+      "Cname": "the Netherland"
+    },
+    {
+      "id": 24,
+      "Cname": "the United kingdom"
+    },
+    {
+      "id": 25,
+      "Cname": "the United States"
+    }
   ],
-
   "favourites": [
     {
       "id": 1,
