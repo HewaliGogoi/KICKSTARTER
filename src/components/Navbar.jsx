@@ -17,6 +17,18 @@ const Logo = styled.div`
     height:30px;
     cursor:pointer;
   }
+
+  @media (max-width:380px){
+    // border : 2px solid #cecece;
+    width:400%;
+    margin-top:-280%;
+    margin-left:-170%;
+
+    img{
+      // border : 2px solid red;
+      // z-index:1000;
+    }
+  }
 `;
 
 const SearchInput = styled.input`
@@ -35,6 +47,11 @@ const SearchInput = styled.input`
 const SearchButton = styled.button`
   border:none;
   background-color:white;
+
+  @media (max-width:380px){
+    // border:2px solid red;
+    margin:auto;
+  }
 `;
 
 const Topic = styled.div`
@@ -45,6 +62,19 @@ const Topic = styled.div`
 
   a{
     color : #656969;
+  }
+
+  a:hover{
+    color:#037362;
+    text-decoration: underline;
+  }
+
+  @media (max-width:380px){
+    // border:2px solid red;
+    width:380px;
+    flex-direction: column;
+    text-align: left;
+    // display:none;
   }
 `;
 
