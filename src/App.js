@@ -13,6 +13,8 @@ import { Step2 } from "./components/Step2";
 import { Step3 } from "./components/Step3";
 import { useState } from 'react';
 import Pledge from './components/Pledge';
+import { EditProject } from './components/EditProject';
+import { DeleteConfirmation } from './components/DeleteConfirmation';
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <Route path = '/Step2' element = {<Step2 />} /> 
         <Route path = '/Step3' element = {<Step3 />} />
         <Route path = '/checkout/:id/payment' element = {<Pledge/>} />
+        <Route path = "/EditProject" element = {<EditProject />} />
+        <Route path = "/DeleteConfirmation" element = {<DeleteConfirmation />} />
       </Routes>
       {
         !closeF && <Footer/>

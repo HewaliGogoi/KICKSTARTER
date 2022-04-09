@@ -32,15 +32,15 @@ function Step3() {
         <div className="row dropdown">
           <div
             className="form-group col-md-4">
-            <select onChange={(e) => console.log(e.target.value)} name="Select" className="form-control">
+            <select onChange={(e) => console.log(e.target.value)} name="Select" className="dropdownCountry form-control ">
               <option
-                className="btn-secondary dropdown-toggle dr"
+                className="btn-secondary dropdown-toggle "
                 type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                - Select -
+                 Select your country
               </option>
               {Country.map((item) => {
                 return <option key={item.id} value={item.cate}>{item.Cname}</option>;
@@ -53,14 +53,14 @@ function Step3() {
         </div>
         <hr />
             
-        <Link className="nav-link active" aria-current="page" to="/Step2">
-                Additional subcategory
+        <Link className="nav-link active categorybutton" aria-current="page" to="/Step2">
+                ← Additional subcategory
                 </Link>
 
         <button
           className="btn btn-dark sub-button"
           onClick={() => {
-            navigate("/Step2");
+            navigate("/EditProject");
           }}
         >
           Continue

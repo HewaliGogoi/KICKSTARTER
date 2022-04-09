@@ -1,7 +1,10 @@
 import React from "react";
 import "./Arts.css";
+import {useNavigate} from "react-router-dom";
 
 function Arts() {
+  let navigate = useNavigate()
+
   return (
     <>
       <div className="FAQ1">
@@ -16,7 +19,7 @@ function Arts() {
             Click start and get sketching. See how it looks. Then share it with
             your friends!
           </p>
-          <button className="btn btn-secondary btn-lg">Start a project</button>
+          <button className="btn btn-secondary btn-lg" onClick={() => {navigate("/Step1")}}>Start a project</button>
           <p className="rights">
             We're here for you! Our Community Managers know all about running
             projects in each of our categories. Drop us a line about your

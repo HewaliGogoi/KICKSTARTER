@@ -9,19 +9,25 @@ function Step1({setClose, setCloseF}) {
 
   useEffect(() => {
     getData();
+    setClose(true)
+    setCloseF(true)
   }, []);
   
-  const [Arts, setArts] = React.useState([]);
-  const [Artid, setArtId] = React.useState("");
-  const [Comics, setComics] = React.useState([]);
+  // const [Arts, setArts] = React.useState([]);
+  // const [Artid, setArtId] = React.useState("");
+  // const [Comics, setComics] = React.useState([]);
 
-  useEffect(() => {
-    const select = async () => {
-      const req = await fetch("http://localhost:3004/Select");
-      const getres = await req.json();
-      console.log(getres);
-      setArts(await getres); 
-    }
+  // useEffect(() => {
+  //   const select = async () => {
+  //     const req = await fetch("http://localhost:3001/Select");
+  //     const getres = await req.json();
+  //     console.log(getres);
+  //     setArts(await getres); 
+  //   }
+
+  //   select();
+  //   setClose(true);
+  //   setCloseF(true);
 
     select();
     setClose(true);
@@ -29,7 +35,7 @@ function Step1({setClose, setCloseF}) {
   },[])
 
   const getData = async () => {
-    const res = await fetch("http://localhost:3001/select");
+    const res = await fetch("http://localhost:3001/Select");
     const getSelect = await res.json();
     console.log(getSelect);
     setSelect(await getSelect);
@@ -50,7 +56,7 @@ function Step1({setClose, setCloseF}) {
         <div className="row dropdown">
           <div
             className="form-group col-md-4">
-            <select onChange={(e) => console.log(e.target.value)} name="Select" className="form-control">
+            <select onChange={(e) => console.log(e.target.value)} name="Select" className="form-control dropdown1">
               <option
                 className="btn-secondary dropdown-toggle dr"
                 type="button"
@@ -58,7 +64,7 @@ function Step1({setClose, setCloseF}) {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                - Select -
+                 Select 
               </option>
               {Select.map((item) => {
                 return <option key={item.id} value={item.cate}>{item.cate}</option>;
@@ -69,7 +75,7 @@ function Step1({setClose, setCloseF}) {
           <div className="form-group col-md-4">
             <select
               name="Art"
-              className="form-control"
+              className="form-control dropdown2"
               >
               <option
                 className="btn-secondary dropdown-toggle dr"
@@ -77,10 +83,11 @@ function Step1({setClose, setCloseF}) {
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                disabled="disabled"
-                Selected = "- Select -"
+                disabled={true}
+                Selected = " Select "
+                
               >
-                -Select-
+                Select
               </option>
               <option> -- No Subcategory--</option>
               <option> Ceramics </option>
