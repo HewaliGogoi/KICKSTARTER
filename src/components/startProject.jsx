@@ -166,7 +166,7 @@ function StartProject({close, setClose, closeF, setCloseF}) {
         </div>
         <div className="lg author-destiny">— Brian Fargo, successful Kickstarter project creator</div>
         </div>
-        <button className="sbutton btn btn-secondary btn-lg">Start a project</button>
+        <button className="sbutton btn btn-secondary btn-lg" onClick={() => {navigate("/Step1")}}>Start a project</button>
       </div> 
     </>
   );

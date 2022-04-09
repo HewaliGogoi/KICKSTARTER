@@ -5,6 +5,7 @@ import Responsive from './Responsive';
 import right from './right.jpeg';
 import left from './left.jpeg';
 import Announce_logo from './Announce_logo.png';
+import Pagination from './Pagination';
 
 const HomeWrapper = styled.div`
   // border: 1px solid red;
@@ -196,7 +197,7 @@ const Interview = styled.div`
     // border: 1px solid red;
     width:380px;
     padding:5% 5%;
-    // height:1000px;
+    height:400px;
   }
 `;
 
@@ -205,7 +206,27 @@ const Box = styled.div`
     // border: 1px solid green;
     width:340px;
     // padding:5% 5%;
-    display:inline-block;
+    // display:none;
+    // padding:1%;
+
+    div{
+      // border:2px solid brown;
+      // padding:1%;
+      position:relative;
+      
+      img{
+        // border:2px solid blue;
+        width:10px;
+        // position:absolute;
+        height:100px !important;
+      }
+      h6{
+        font-size:15px !important;
+        // position:absolute;
+        justify-content:center;
+      }
+    }
+
   }
 `;
 
@@ -247,7 +268,7 @@ const Home = ({setClose, setCloseF}) => {
   return (
     <HomeWrapper>
       <div style={{position:"relative"}}>
-        <BackImg src={right} style={{position:"absolute", left:0, width:"150px", top:"30px"}} alt="" />
+        <BackImg src={right} style={{position:"absolute", left:0, width:"150px", top:"30px", zIndex:"-10"}} alt="" />
         <QuoteWrapper>
           <h1>Creative work shows us what’s possible.</h1>
           <h1>Help fund it here.</h1>
@@ -274,7 +295,7 @@ const Home = ({setClose, setCloseF}) => {
       <BodyWrapper>
         <Overview>
           <FeaturedWrapper>
-            <p>FEATURED PROJECT</p>
+            <p style={{color:"#656977"}}>FEATURED PROJECT</p>
             <img src="https://ksr-ugc.imgix.net/assets/036/376/565/baf56221a9a9e48409de65c6f4eec67c_original.png?ixlib=rb-4.0.2&crop=faces&w=1024&h=576&fit=crop&v=1644987976&auto=format&frame=1&q=92&s=c1153462ed6ce402483846711c2c79b9" alt="" />
             <Raiser style={{width:"30%"}}></Raiser>
             <h3>Where We Go Together or The Flashlight Play</h3>
@@ -282,21 +303,9 @@ const Home = ({setClose, setCloseF}) => {
             <p>By Kevin Michael Wesson</p>
           </FeaturedWrapper>
           <RecommendWrapper>
-            <p>RECOMMENDED FOR YOU</p>
+            <p style={{color:"#656977"}}>RECOMMENDED FOR YOU</p>
             {
-              imgData.map((e) => <div key={e.id}>
-                <div style={{display:"flex", borderBottom:"1px solid #cecece", cursor:"pointer"}} onClick={()=>handleImage(e.id)}>
-                  <div style={{position:"relative", maxWidth:"30%", margin:"10px"}}>
-                    <img style = {{width:"100%"}}src={e.image} alt="" />
-                    <div style={{backgroudColor:"red", position:"absolute", bottom:"0"}}></div>
-                    <Raiser style={{ zIndex:"2", width:`${((+e.fund)/(+e.goal))*100}%`}}>{console.log((e.fund/e.goal)*100)}</Raiser>
-                  </div>
-                  <div>
-                    <h6>{e.title}</h6>
-                    <p>By {e.author}</p>
-                  </div>
-                </div>
-              </div>)
+              imgData.map((e) => <Pagination e={e} handleImage={handleImage}/>)
             }
             <div style = {{display : "flex", flex:"1", padding:"7%", position:"relative"}}>
               <div style={{display : "flex", justifyContent:"space-evenly", position:"absolute", right:"0", width:"40%"}}>

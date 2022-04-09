@@ -30,15 +30,15 @@ function Step2() {
         <div className="row dropdown">
           <div
             className="form-group col-md-4">
-            <select onChange={(e) => console.log(e.target.value)} name="Select" className="form-control">
+            <select onChange={(e) => console.log(e.target.value)} name="Select" className="form-control dropdown1">
               <option
-                className="btn-secondary dropdown-toggle dr"
+                className="btn-secondary dropdown-toggle"
                 type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                - Select -
+                 Select 
               </option>
               {Select.map((item) => {
                 return <option key={item.id} value={item.cate}>{item.cate}</option>;
@@ -49,10 +49,10 @@ function Step2() {
           <div className="form-group col-md-4">
             <select
               name="Art"
-              className="form-control"
+              className="form-control dropdown2"
               >
               <option
-                className="btn-secondary dropdown-toggle dr"
+                className="btn-secondary dropdown-toggle"
                 type="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -60,7 +60,7 @@ function Step2() {
                 disabled="disabled"
                 Selected = "- Select -"
               >
-                -Select-
+                Select
               </option>
               <option> -- No Subcategory--</option>
               <option> Ceramics </option>
@@ -81,8 +81,8 @@ function Step2() {
         </div>
         <hr />
         
-        <Link className="nav-link active" aria-current="page" to="/Step1">
-                Category
+        <Link className="nav-link active categorybutton" aria-current="page" to="/Step1">
+                ←Category
                 </Link>
         <button className="btn btn-dark sub-button" onClick={() => {navigate("/Step3")}}>Next: Location</button>
       </div>

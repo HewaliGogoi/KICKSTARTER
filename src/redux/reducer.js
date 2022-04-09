@@ -1,6 +1,6 @@
-import {LOGIN,LOGOUT,AUTH} from './actionType'
+import {LOGIN,LOGOUT,AUTH, DATA} from './actionType'
 
-let init = {user:{email:"",password:""}, isAuth:false}
+let init = {user:{email:"",password:""}, isAuth:false, single:null}
 
 export const reducer = (state = init, {type, payload}) =>{
     // console.log(state, "6")
@@ -18,6 +18,11 @@ export const reducer = (state = init, {type, payload}) =>{
         return {
             ...state,user:{email:"",password:""},isAuth:false
         }
+
+        case DATA:
+            return{
+                ...state, single:payload
+            }
 
         default:
         return state
