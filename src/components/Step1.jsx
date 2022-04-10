@@ -13,29 +13,9 @@ function Step1({setClose, setCloseF}) {
     setCloseF(true)
   }, []);
   
-  // const [Arts, setArts] = React.useState([]);
-  // const [Artid, setArtId] = React.useState("");
-  // const [Comics, setComics] = React.useState([]);
-
-  // useEffect(() => {
-  //   const select = async () => {
-  //     const req = await fetch("http://localhost:3001/Select");
-  //     const getres = await req.json();
-  //     console.log(getres);
-  //     setArts(await getres); 
-  //   }
-
-  //   select();
-  //   setClose(true);
-  //   setCloseF(true);
-
-    select();
-    setClose(true);
-    setCloseF(true);
-  },[])
 
   const getData = async () => {
-    const res = await fetch("http://localhost:3001/Select");
+    const res = await fetch("https://hewali-fakeserver.herokuapp.com/Select");
     const getSelect = await res.json();
     console.log(getSelect);
     setSelect(await getSelect);

@@ -47,7 +47,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
    
     e.preventDefault();
-      fetch(`http://localhost:3001/user`,{
+      fetch(`https://hewali-fakeserver.herokuapp.com/user`,{
          method:"POST",
          body:JSON.stringify(userSignUp),
          headers:{
@@ -64,7 +64,7 @@ const SignUp = () => {
   };
 
   const getData = () =>{
-    fetch(`http://localhost:3001/user`)
+    fetch(`https://hewali-fakeserver.herokuapp.com/user`)
     .then((data)=>data.json())
     .then((data)=> {setList([...data])
       console.log(list)
