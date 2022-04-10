@@ -247,7 +247,7 @@ const Home = ({setClose, setCloseF}) => {
    }, []);
   
   const getData = () => {
-    fetch(`http://localhost:3001/project?_page=${page}&_limit=3`)
+    fetch(`https://hewali-fakeserver.herokuapp.com/project?_page=${page}&_limit=3`)
     .then((data) => data.json())
     // .then((data) => console.log(data))
     .then((data) => {setImgData([...data]);
@@ -255,7 +255,7 @@ const Home = ({setClose, setCloseF}) => {
   }
 
   const getDataInterview = () => {
-    fetch(`http://localhost:3001/interview`)
+    fetch(`https://hewali-fakeserver.herokuapp.com/interview`)
     .then((data) => data.json())
     .then((data) => setInterview([...data]))
   }

@@ -13,7 +13,7 @@ function Step2() {
   }, []);
 
   const getData = async () => {
-    const res = await fetch("http://localhost:3001/select");
+    const res = await fetch("https://hewali-fakeserver.herokuapp.com/select");
     const getSelect = await res.json();
     console.log(getSelect);
     setSelect(await getSelect);
