@@ -32,55 +32,9 @@
       "Repassword": "1",
       "ReEmail": "",
       "id": 2
-    },
-    {
-      "name": "sumi",
-      "email": "sumi@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "",
-      "id": 3
-    },
-    {
-      "name": "Hewali Gogoi",
-      "email": "hewaligogoi22@gmail.com",
-      "password": "2",
-      "Repassword": "1",
-      "ReEmail": "hewaligogoi22@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "Hewali Gogoi",
-      "email": "hewaligogoi22@gmail.com",
-      "password": "`",
-      "Repassword": "`",
-      "ReEmail": "hewaligogoi22@gmail.com",
-      "id": 5
-    },
-    {
-      "name": "Hewali Gogoi",
-      "email": "hewaligogoi22@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "hewaligogoi22@gmail.com",
-      "id": 6
-    },
-    {
-      "name": "Hewali Gogoi",
-      "email": "hewaligogoi22@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "hewaligogoi22@gmail.com",
-      "id": 7
-    },
-    {
-      "name": "Hewali Gogoi",
-      "email": "hewaligogoi22@gmail.com",
-      "password": "1",
-      "Repassword": "1",
-      "ReEmail": "hewaligogoi22@gmail.com",
-      "id": 8
     }
+    
+   
   ],
   "project": [
     {
