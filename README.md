@@ -1,71 +1,69 @@
-# Getting Started with Create React App
+# Kickstarter - (Clone)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a clone of Kickstarter which is an American public benefit corporation based in Brooklyn, New York, that maintains a global crowdfunding platform focused on creativity. Technologies such as React/Redux and Styled components are used.
 
-## Available Scripts
+# Tech Stack Used 💻
 
-In the project directory, you can run:
+- ReactJS
+- Redux
+- Styled-components
+- Material UI
 
-### `npm start`
+## How to run the project 🚀
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ Please fork the repository and then use it on your own.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can also take a glimpse of our Project, just follow the below steps:
 
-### `npm test`
+1. Run the command npm run start in terminal to start the app at port 3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Go to the browser you will land on the home page.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Snapshots 📷
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Home Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Home Page](./Images/homepage.png)
 
-### `npm run eject`
+2. Login page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Login Page](./Images/login.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Start a project page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Start a project page](./Images/start_a_project_page.png)
 
-## Learn More
+4. Select category page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Select category page](./Images/select_category_page.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Project status Page
 
-### Code Splitting
+![Project status Page](./Images/project_status_page.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Payment Page
 
-### Analyzing the Bundle Size
+![Payment Page](./Images/paymentpage.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Features ✨
+- We have added Login and signup pages using react-redux    libarary.
+- You can raise the funds for your creative projects.
+- Added Logout functionality.
+- You can help to others by make a payment for their creative projects.
 
-### Making a Progressive Web App
+## Demo 🎥
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Deployed Link: [Kickstarter Clone](https://apna-kickstarter.netlify.app/)
 
-### Advanced Configuration
+## Team Members and Contributors 😇
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+👤 Sumitra Awadhiya
+- Github : [Sumitra Awadhiya](https://github.com/sumitra05)
 
-### Deployment
+👤 Hewali Gogoi
+- Github : [Hewali Gogoi](https://github.com/HewaliGogoi)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# kickstarter
+👤 Amarjeet Maurya
+- Github : [Amarjeet Maurya](https://github.com/amar969)

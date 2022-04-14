@@ -29,10 +29,10 @@ function Step1({setClose, setCloseF}) {
   //   setClose(true);
   //   setCloseF(true);
 
-    select();
-    setClose(true);
-    setCloseF(true);
-  },[])
+  //   select();
+  //   setClose(true);
+  //   setCloseF(true);
+  // },[])
 
   const getData = async () => {
     const res = await fetch("http://localhost:3001/Select");
