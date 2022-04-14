@@ -24,7 +24,7 @@ const Project = ({setClose}) => {
   }, [])
 
   const getData = () => {
-    fetch(`http://localhost:3001/project/${id}`)
+    fetch(`https://hewali-fakeserver.herokuapp.com/project/${id}`)
     .then((res) => res.json())
     .then((res)=> {
       // setProject({...res}); 

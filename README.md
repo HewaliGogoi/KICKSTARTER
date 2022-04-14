@@ -11,7 +11,7 @@ This is a clone of Kickstarter which is an American public benefit corporation b
 
 ## How to run the project 🚀
 
- Please fork the repository and then use it on your own.
+Please fork the repository and then use it on your own.
 
 You can also take a glimpse of our Project, just follow the below steps:
 

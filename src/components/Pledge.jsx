@@ -40,19 +40,6 @@ const Pledge = () => {
 
     const navigate = useNavigate();
 
-    // useEffect(() => {
-    //     getData();
-    // }, [])
-
-    // const getData = () => {
-    //     fetch(`http://localhost:3001/project/${id}`)
-    //     .then((res) => res.json())
-    //     .then((res)=>console.log(res))
-    // } 
-
-    // const single = useSelector((state)=>state.single);
-    // console.log(single.single)
-
     const handleChange =(e)=>{
         e.preventDefault();
         const {name, value} = e.target;

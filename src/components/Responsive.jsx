@@ -65,13 +65,13 @@ const Responsive =() =>{
     }, []);
     
     const getCdata = () => {
-        fetch(`http://localhost:3001/favourites`)
+        fetch(`https://hewali-fakeserver.herokuapp.com/favourites`)
         .then((data) => data.json())
         .then((data) => {setCImage([...data])})
     }
     
     const getCdata1 = () => {
-      fetch(`http://localhost:3001/favourites1`)
+      fetch(`https://hewali-fakeserver.herokuapp.com/favourites1`)
       .then((data) => data.json())
       .then((data) => setCImage1([...data]))
     }
