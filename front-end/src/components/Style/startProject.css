@@ -1,0 +1,289 @@
+body *{
+    box-sizing: border-box;
+}
+
+.header{
+    display: grid;
+    justify-content: center;
+}
+
+.but{
+    color: white;
+    background-color: #028858; 
+    padding: 10px 20px;
+    border: none;
+    display: flex;
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+}
+
+.heading{
+    margin-top: 50px;
+    font-size: 3.0rem;
+    font-weight: bold;
+    width: 650px;
+    text-align: left;
+    justify-content: center;
+}
+
+.bodyImg{
+    display: grid;
+    width: 90%;
+    height: 600px;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: repeat(1,50%);
+    gap: 35px;
+    row-gap: 20px;
+    margin: 50px 50px;
+    overflow: hidden;
+}
+
+.a {
+    grid-row: 1/ span 2;
+}
+
+.a img{
+    width: 100%;
+}
+
+.b {
+    grid-row: 1 /span 1;
+    overflow: hidden;
+}
+
+.b img {
+    width: 100%;
+}
+
+.c {
+    grid-row: 2 / span 2;
+    overflow: hidden;
+}
+
+.c img {
+    width: 100%;
+
+}
+
+.main_content{
+    margin-top: 100px;
+    display: grid;
+    padding: 6rem 8.5rem;
+    background-color: #034752;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+    justify-self: center;
+    text-align: left;
+    align-items: center;
+    position: relative;
+}
+
+.main_content span{
+    font-size: 15px;
+}
+
+.author{
+    position: absolute;
+    bottom: 20px;
+    left: 195px;
+}
+
+.commas{
+    padding: 20px;
+    color: rgba(27, 27, 27, 0.541);
+    position: absolute;
+    left: 75px;
+    top: 95px;
+}
+
+.contain{
+    padding: 0 35px;
+    margin-left: 25px;
+}
+
+.section2{
+    display: grid;
+}
+
+.desc{
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 6rem 12.5rem;
+    text-align: left;
+    line-height: 2.5rem;
+}
+
+.FAQ{
+    display: grid;
+    padding: 0 12.0rem; 
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+}
+
+.Question{
+    padding-top: 3rem;
+    width: 300px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.ans{
+    padding-top: 3rem;
+    text-align: left;
+}
+
+
+.video{
+    margin: 100px 0;
+}
+
+.landscape{
+    margin: 50px 0;
+    height: 700px;
+}
+
+hr{
+    background-color: black;
+    margin-top: 50px;
+}
+
+.navbar-cat{
+    padding: 0 200px;
+}
+
+.destiny{
+    background-color: #FFCBA9;
+    padding: 50px 250px;
+    font-weight: bold;
+    position: relative;
+}
+
+.bottom-destiny{
+    font-size: 3rem;
+    padding: 3rem 4rem;
+    text-align: left;
+}
+
+.author-destiny{
+    text-align: left;
+    padding: 0.1rem 4rem;
+}
+
+.sbutton{
+    position: absolute;   
+}
+
+.section{
+    margin: 100px 300px;
+}
+
+.primary{
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-right: 80px; 
+}
+
+.primary_desc{
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    color: grey
+}
+
+.dropdown select{
+    display: grid;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 100px;  
+}   
+
+.dropdownCountry{
+    width: 500px;
+    border-radius: 0;
+    height: 50px;
+}
+
+.dropdown1{
+    width: 250px;
+    border-radius: 0;
+}
+
+.dropdown2{
+    width: 250px;
+    border-radius: 0;
+}
+
+.sub-button{ 
+    position: absolute;
+    right: 450px;
+}
+
+.categorybutton{
+    position: absolute;
+    color: black;
+}
+
+/* Edit Project */
+
+.EditProjectheading{
+    margin: 60px 50px;
+}
+
+.EPsection{
+    margin-left: 50px;
+    text-align: left;
+}
+
+.EDmaincontent{
+    padding: 60px 20px;
+    border: 1px solid black; 
+    width: 90%;
+    display: grid;
+    justify-content: center;
+    text-align: left;
+}
+
+.EDmaincontent hr{
+    margin-top: 20px;
+}
+
+.EDmaincontent li{
+    list-style-type: none; 
+}
+
+.EDmaincontent .EDListContent{
+    font-size: 0.9em;
+}
+
+.EDNumbering{
+    font-size: 2.7rem;
+    margin-right: 50px;
+    color:rgba(214, 201, 201, 0.322);
+}
+
+.EDpara{
+    font-size: 0.9em;
+}
+
+.heart{
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.deleteProjectBTN{
+    margin: 50px 0;
+    border: none;
+    color: grey;
+    outline: none;
+}
+
+.deleteProjectBTN:hover{
+    background-color: rgb(202, 199, 199);
+    color:black;
+    outline: none;
+    border-radius: 0;
+}
