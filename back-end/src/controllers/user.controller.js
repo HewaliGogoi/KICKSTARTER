@@ -4,7 +4,7 @@ const User = require("../models/user.model");
 const router = express.Router();
 const protect = require("../middlewares/protect");
 
-router.get("/user",protect, async(req, res) =>{
+router.get("",protect, async(req, res) =>{
     // console.log("req user",await req.user)
 
     const users = await User.find({}).select('-password').lean().exec();

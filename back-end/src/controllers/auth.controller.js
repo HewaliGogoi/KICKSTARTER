@@ -21,11 +21,13 @@ const signup = async (req,res) =>{
     }
 };
 
+
 const signin = async (req,res) =>{
     //  we will find the user with the email address
     let user;
     try {
-         user = await User.findOne({email: req.body.email}).exec();
+        user = await User.findOne({email: req.body.email}).exec();
+        // console.log(user)
 
         if(!user)
         return res
@@ -41,7 +43,7 @@ const signin = async (req,res) =>{
     
     try {
      // we will try to match password the user has with the password stored in the system
-
+    //  user = await User.findOne({password: req.body.password}).exec();
       const match = await user.checkPassword(req.body.password);
       
       if(!match) return res
