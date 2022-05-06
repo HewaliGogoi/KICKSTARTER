@@ -11,7 +11,7 @@ const userController = require("./controllers/user.controller");
 const productController = require("./controllers/product.controller")
 
 app.post("/signup", signup);
-app.post("/sigin", signin);
+app.post("/signin", signin);
 
 app.use("/users", userController);
 app.use("/products", productController);
