@@ -93,9 +93,9 @@ const Navbar = ({close, setClose}) => {
   }
   const isAuth = useSelector(state=>state.isAuth)
   const [auth,setAuth] = useState(isAuth)
-  useEffect(() => {
-    setAuth(isAuth)
-  }, [])
+  // useEffect(() => {
+  //   setAuth(isAuth)
+  // }, [])
   
   const dispatch = useDispatch()
 
@@ -132,7 +132,7 @@ const Navbar = ({close, setClose}) => {
                 <SearchButton onClick={handleSearch} style={open ? {display:"block"}:{display : "none"}}><i className="fa-solid fa-xmark"></i></SearchButton>
             </form>
             <li className="nav-item" style={{listStyle: "none"}}>
-           {isAuth?<button onClick={()=>handleLogOut()}>Logout</button>:<Link className="nav-link" to="/login">Log In</Link>} 
+            {isAuth?<button onClick={()=>handleLogOut()}>Logout</button>:<Link className="nav-link" to="/login">Log In</Link>} 
             </li>
             </div>
         </div>
