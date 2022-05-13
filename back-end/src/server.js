@@ -17,7 +17,6 @@ app.use("/users", userController);
 app.use("/products", productController);
 app.use(passport.initialize());
 
-
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
