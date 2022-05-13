@@ -1,14 +1,17 @@
 const express = require("express");
-const passport = require("passport");
+// const passport = require("passport");
+// const FacebookStrategy = require("passport-facebook").Strategy;
+const cors = require("cors");
+let port = 2244;
 
 const connect = require("./config/db");
 
 const app = express();
-app.use(express.json());
+
 
 const {signup, signin} = require("./controllers/auth.controller")
 const userController = require("./controllers/user.controller");
-const productController = require("./controllers/product.controller");
+
 
 //------------------------------------------------------------------
 
@@ -16,30 +19,60 @@ const projectController = require("./controllers/project.controller");
 
 //------------------------------------------------------------------
 
+app.use(express.json());
+app.use(cors());
 app.post("/signup", signup);
-app.post("/sigin", signin);
+app.post("/signin", signin);
 
 app.use("/users", userController);
-app.use("/products", productController);
-app.use(passport.initialize());
+// app.use("/products", productController);
+// app.use(passport.initialize());
 
 //------------------------------------------------------------------
 
-app.use("/project", projectController);
+app.use("/projects", projectController);
 
 //------------------------------------------------------------------
 
-app.get('/auth/google',
-  passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
+// app.get('/auth/google',
+//   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
 
-app.get('/auth/google/callback', 
-  passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
-});
+// app.get('/auth/google/callback', 
+//   passport.authenticate('google', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect('/');
+// });
+
+// passport.use(new FacebookStrategy({
+//     clientID: process.env.CLIENT_ID_FB,
+//     clientSecret: process.env.CLIENT_KICKSTARTER_FB,
+//     callbackURL: "http://localhost:2244/auth/facebook/secrets"
+//     },
+//     function(accessToken, refreshToken, profile, cb) {
+//     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+//       return cb(err, user);
+//     });
+//   }
+// ));
+
+// const start = async() => {
+//   try {
+//     await connect();
+//     // console.log(1);
+//     app.listen(process.env.PORT || port, () =>{
+//         console.log("Listening on port 2244...");
+//     });
+    
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// };
+
+// module.exports = start;
 
 
+<<<<<<< HEAD
 const start = async() => {
   try {
     await connect();
@@ -47,10 +80,21 @@ const start = async() => {
     app.listen(2244, () =>{
         console.log("Listening on port 2244...");
     });
+=======
+app.listen(process.env.PORT || port, async() => {
+  try {
+    await connect();
+    // console.log(1);
+    console.log("Listening on port 2244...");
+>>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
     
   } catch (error) {
     res.status(500).json(error);
   }
+<<<<<<< HEAD
 };
 
 module.exports = start;
+=======
+})
+>>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6

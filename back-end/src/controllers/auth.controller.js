@@ -4,14 +4,14 @@ require("dotenv").config();
 const User = require("../models/user.model")
 
 const newToken = (user)=>{
-    return jwt.sign({id: user.id}, process.env.JWT_SECRET_KEY);
+    return jwt.sign({user}, process.env.JWT_SECRET_KEY);
 };
 
 const signup = async (req,res) =>{
     
     try {
         const user = await User.create(req.body) 
-      const token = newToken(user);
+        const token = newToken(user);
         return res.status(201).json({data : {token} });
         
     } catch (e) {
@@ -22,6 +22,41 @@ const signup = async (req,res) =>{
 };
 
 
+<<<<<<< HEAD
+=======
+// const signin = async(req, res) => {
+
+//   console.log(1);
+
+//     try {
+//         // we will try to find the user with the email provided
+//         const user = await User.findOne({ email: req.body.email });
+//         console.log(user);
+//         // If user is not found then return error
+//         if (!user)
+//           return res
+//             .status(400)
+//             .send({ message: "Please try another email or password" });
+    
+//         // if user is found then we will match the passwords
+//         const match = user.checkPassword(req.body.password);
+    
+//         if (!match)
+//           return res
+//             .status(400)
+//             .send({ message: "Please try another email or password" });
+    
+//         // then we will create the token for that user
+//         const token = newToken(user);
+    
+//         // then return the user and the token
+//         res.send({ user, token });
+//       } catch (err) {
+//         res.status(500).send(err.message);
+//       }
+// }
+
+>>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
 const signin = async (req,res) =>{
     //  we will find the user with the email address
     let user;
@@ -43,7 +78,10 @@ const signin = async (req,res) =>{
     
     try {
      // we will try to match password the user has with the password stored in the system
+<<<<<<< HEAD
     //  user = await User.findOne({password: req.body.password}).exec();
+=======
+>>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
       const match = await user.checkPassword(req.body.password);
       
       if(!match) return res
@@ -59,7 +97,7 @@ const signin = async (req,res) =>{
 
 //create a new token and return it
    const token = newToken(user);
-   return res.status(201).json({data:{token}});
+   return res.status(200).json({data:{token}});
 
 };
 
