@@ -12,12 +12,12 @@ const signup = async (req,res) =>{
     try {
         const user = await User.create(req.body) 
         const token = newToken(user);
-        return res.status(201).json({data : {token} });
+        return res.status(201).json({data : {token}, user : {user} });
         
     } catch (e) {
         return res
         .status(500)
-        .json({status: "failed", message: "Something went wrong"});
+        .json(e);
     }
 };
 
