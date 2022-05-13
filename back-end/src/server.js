@@ -71,29 +71,12 @@ app.use("/projects", projectController);
 // module.exports = start;
 
 
-<<<<<<< HEAD
 const start = async() => {
-  try {
-    await connect();
-    // console.log(1);
-    app.listen(2244, () =>{
-        console.log("Listening on port 2244...");
-    });
-=======
-app.listen(process.env.PORT || port, async() => {
-  try {
-    await connect();
-    // console.log(1);
-    console.log("Listening on port 2244...");
->>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
-    
-  } catch (error) {
-    res.status(500).json(error);
-  }
-<<<<<<< HEAD
+  await connect();
+  // console.log(1);
+  app.listen(2244, () =>{
+      console.log("Listening on port 2244...");
+  });
 };
 
 module.exports = start;
-=======
-})
->>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
