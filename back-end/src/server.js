@@ -72,11 +72,16 @@ app.use("/projects", projectController);
 
 
 const start = async() => {
-  await connect();
-  // console.log(1);
-  app.listen(2244, () =>{
-      console.log("Listening on port 2244...");
-  });
+  try {
+    await connect();
+    // console.log(1);
+    app.listen(2244, () =>{
+        console.log("Listening on port 2244...");
+    });
+    
+  } catch (error) {
+    res.status(500).json(error);
+  }
 };
 
 module.exports = start;
