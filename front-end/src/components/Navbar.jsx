@@ -92,7 +92,8 @@ const Navbar = ({close, setClose}) => {
     navigate("/")
   }
   const isAuth = useSelector(state=>state.isAuth)
-  const [auth,setAuth] = useState(isAuth)
+  console.log(isAuth)
+  // const [auth,setAuth] = useState(isAuth)
   // useEffect(() => {
   //   setAuth(isAuth)
   // }, [])

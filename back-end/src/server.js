@@ -11,7 +11,7 @@ const app = express();
 
 const {signup, signin} = require("./controllers/auth.controller")
 const userController = require("./controllers/user.controller");
-// const productController = require("./controllers/product.controller");
+
 
 //------------------------------------------------------------------
 

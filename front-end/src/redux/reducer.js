@@ -7,7 +7,7 @@ export const reducer = (state = init, {type, payload}) =>{
     switch(type){
         case LOGIN:
         return{
-            ...state,user:{...payload}
+            ...state,user:{...payload}, isAuth:true
         }
 
         case AUTH:
