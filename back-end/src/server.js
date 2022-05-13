@@ -28,7 +28,6 @@ app.use("/users", userController);
 // app.use("/products", productController);
 // app.use(passport.initialize());
 
-//------------------------------------------------------------------
 
 app.use("/projects", projectController);
 
