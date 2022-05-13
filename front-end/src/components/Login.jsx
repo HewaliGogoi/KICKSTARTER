@@ -1,9 +1,10 @@
 import React,{useEffect} from "react";
 import styled from 'styled-components'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {changeAuth, loginAction} from '../redux/action'
 import { useSelector,useDispatch } from "react-redux";
+import axios from "axios";
 import {
   Button,
   Button1,
@@ -43,20 +44,40 @@ const Login = () => {
   const auth = useSelector(state=>state.isAuth)
   const user = useSelector(state=>state.user)
 
-  console.log(auth)
-  console.log(user, "47")
+  // console.log(auth)
+  // console.log(user, "47")
   useEffect(() => {
     // auth?navigate("/"):navigate("/login")
   }, [])
   
+  
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginAction(formDetails))
-    dispatch(changeAuth())
+    // fetch("http://localhost:2244/signin", {
+    //   method: "POST",
+    //   body:JSON.stringify(formDetails),
+    //   headers: { "content-Type" : "application/json" }
+    // })
+
+    axios.post("http://localhost:2244/signin", formDetails)
+    .then((data) => {
+      console.log(data)
+      if(data.status == 200){
+        navigate('/');
+        console.log(data)
+      }else{
+        alert("Invalid credentials");
+      }
+    })
+
+
+
+    // dispatch(loginAction(formDetails))
+    // dispatch(changeAuth())
     // if(formDetails.email == user.email && formDetails.password == user.password){
-      navigate("/")
+      // navigate("/")
     // }
     // else{
     //   alert("Please provide correct credentials")
@@ -94,7 +115,7 @@ const Login = () => {
           
           <br />
           <Forget_password>Forgot your password?</Forget_password>
-          <Button >Log in</Button> <br />
+          <Button>Log in</Button> <br />
           <Checkbox>
             {" "}
             <input type="checkbox" /> Remember me

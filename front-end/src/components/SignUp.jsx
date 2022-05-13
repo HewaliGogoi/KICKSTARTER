@@ -47,7 +47,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
    
     e.preventDefault();
-      fetch(`https://hewali-fakeserver.herokuapp.com/user`,{
+      fetch(`http://localhost:2244/signup`,{
          method:"POST",
          body:JSON.stringify(userSignUp),
          headers:{
@@ -56,7 +56,8 @@ const SignUp = () => {
      })
      .then((res)=> (res.json())) 
       .then((res) => {
-        let payload = {email:res.email, password:res.password}
+        console.log(res)
+        let payload = {email:res.user.user.email, password:res.user.user.password}
         console.log(payload)
         dispatch(loginAction(payload))
         navigate("/login")
@@ -64,7 +65,7 @@ const SignUp = () => {
   };
 
   const getData = () =>{
-    fetch(`https://hewali-fakeserver.herokuapp.com/user`)
+    fetch(`http://localhost:2244/signup`)
     .then((data)=>data.json())
     .then((data)=> {setList([...data])
       console.log(list)
