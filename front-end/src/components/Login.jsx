@@ -52,7 +52,7 @@ const Login = () => {
   
   
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
     // fetch("http://localhost:2244/signin", {
@@ -65,6 +65,7 @@ const Login = () => {
     .then((data) => {
       console.log(data)
       if(data.status == 200){
+        dispatch(loginAction(data.data.token));
         navigate('/');
         console.log(data)
       }else{
@@ -74,7 +75,6 @@ const Login = () => {
 
 
 
-    // dispatch(loginAction(formDetails))
     // dispatch(changeAuth())
     // if(formDetails.email == user.email && formDetails.password == user.password){
       // navigate("/")

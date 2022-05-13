@@ -56,7 +56,8 @@ const SignUp = () => {
      })
      .then((res)=> (res.json())) 
       .then((res) => {
-        let payload = {email:res.email, password:res.password}
+        console.log(res)
+        let payload = {email:res.user.user.email, password:res.user.user.password}
         console.log(payload)
         dispatch(loginAction(payload))
         navigate("/login")

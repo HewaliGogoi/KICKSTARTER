@@ -12,18 +12,16 @@ const signup = async (req,res) =>{
     try {
         const user = await User.create(req.body) 
         const token = newToken(user);
-        return res.status(201).json({data : {token} });
+        return res.status(201).json({data : {token}, user : {user} });
         
     } catch (e) {
         return res
         .status(500)
-        .json({status: "failed", message: "Something went wrong"});
+        .json(e);
     }
 };
 
 
-<<<<<<< HEAD
-=======
 // const signin = async(req, res) => {
 
 //   console.log(1);
@@ -56,7 +54,6 @@ const signup = async (req,res) =>{
 //       }
 // }
 
->>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
 const signin = async (req,res) =>{
     //  we will find the user with the email address
     let user;
@@ -78,10 +75,6 @@ const signin = async (req,res) =>{
     
     try {
      // we will try to match password the user has with the password stored in the system
-<<<<<<< HEAD
-    //  user = await User.findOne({password: req.body.password}).exec();
-=======
->>>>>>> 8043242aae90293efbf41190a5a38d5728f806f6
       const match = await user.checkPassword(req.body.password);
       
       if(!match) return res
