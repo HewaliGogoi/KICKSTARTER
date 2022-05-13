@@ -30,7 +30,7 @@ function Arts() {
       </div>
 
       <div className="container">
-        EXAMPLE ARTS PROJECTS
+      EXAMPLE ARTS PROJECTS
         <div className="row">
           <div className="col-sm">
             <img src="https://ksr-ugc.imgix.net/assets/011/536/188/8f61f3b115b209d585bfa98902aa9cf4_original.jpeg?ixlib=rb-4.0.2&crop=faces&w=608&h=342&fit=crop&v=1463684144&auto=format&frame=1&q=92&s=fe7299df28edd806aaeef448ebec26b3" />

@@ -3,7 +3,7 @@
 const express = require("express");
 const router = express.Router();
 const protect = require("../middlewares/protect");
-const Product = require("../models/product.model");
+// const Product = require("../models/product.model");
 
 router.get("/",protect, async (req, res) =>{
     
