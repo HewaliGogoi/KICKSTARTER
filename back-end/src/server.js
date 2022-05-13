@@ -27,7 +27,6 @@ app.get('/auth/google/callback',
     res.redirect('/');
 });
 
-
 const start = async() => {
     await connect();
 
